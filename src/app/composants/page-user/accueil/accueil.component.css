@@ -1,0 +1,127 @@
+:root {
+    --main-color: #3E3E3E;
+  }
+  
+  .Container_Content {
+    margin-top: 60px;
+  }
+  *{
+    list-style: none;
+  }
+  .Container_Content_Section1 p,
+  .Container_Content_Section1 h3 {
+    text-align: center;
+  }
+  
+  .Content_Section1_img {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+    margin-top: 5rem;
+  }
+  
+  .Content_Section1_img img {
+    width: 160px;
+    height: 110px;
+  }
+  
+  .Container_Content_Section2 p,
+  .Container_Content_Section2 h3 {
+    text-align: center;
+  }
+  
+  .Container_Section_Cards {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .Container_Section_Cards .card img {
+    width: auto;
+    height: 2OOpx;
+  }
+  
+  .decouvrir {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .decouvrir a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  
+  .card {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+  .gauche{
+    padding: 0;
+}
+.detail{
+      align-items: start;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+  
+  .titre1,
+  .titre2 {
+    display: flex;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 5px;
+  }
+  .bottonbleucard{
+   margin-left: 15%;
+    color: #FFFFFF;
+    background-color: #023047;
+
+  }
+  .card-title{
+ padding-left:19%;
+ color: #E94D1A;
+ font-weight: bold;
+  }
+  .red{
+    color: #E94D1A;
+    font-weight: bold;
+  }
+  
+  
+ 
+  @media screen and (max-width:700px) {
+    .Container_Section_Online {
+      width: 100%;
+      height: auto;
+      background-color: #D9D9D9;
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: auto;
+      justify-content: center;
+      padding: 3em;
+      /* align-items: center; */
+    }
+  
+    .Online_left {
+      margin-bottom: 30px;
+    }
+  }
+  .premiersoustitreacceuil{
+    padding-left: 45%;
+  }
+  /* .voirdétail{
+    background-color: #023047;
+    padding: 1px 3px;
+    color: white;
+    border-radius: 5px;
+    margin-top: 1.5rem;
+  }
+  .white{
+    color:white ;
+  } */
+  
+ 

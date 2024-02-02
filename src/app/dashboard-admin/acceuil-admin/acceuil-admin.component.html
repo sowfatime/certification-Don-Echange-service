@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!-- Website - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <body>
+
+    <div class="sidebar">
+      <div class="logo-details">
+        <i class="bx bxl-c-plus-plus"></i>
+        <span class="logo_name">Don&Echange</span>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a routerLink="/acceuil-admin" class="active">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/utilisateur"  >
+            <i class="bx bx-user"></i>
+            <span class="links_name">Utilisateur</span>
+          </a>
+        </li>
+        <li>
+          <a  routerLink="/roles">
+            <i class="bx bx-list-ul"></i>
+            <span class="links_name">Roles</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/annonce">
+            <i class="bx bx-pie-chart-alt-2"></i>
+            <span class="links_name">Annonces</span>
+          </a>
+        </li>
+        <li>
+          <a  routerLink="/article">
+            <i class="bx bx-coin-stack"></i>
+            <span class="links_name">Articles</span>
+          </a>
+        </li>
+        <li>
+          <a  routerLink="/categorie">
+            <i class="bx bx-book-alt"></i>
+            <span class="links_name">Catégories</span>
+          </a>
+        </li>
+        <li>
+          <a  routerLink="/commentaire">
+            <i class="bx bx-message"></i>
+            <span class="links_name">Commentaires</span>
+          </a>
+        </li>
+        <li>
+          <a  routerLink="/localite">
+            <i class="bx bx-heart"></i>
+            <span class="links_name">Localités</span>
+          </a>
+        </li>
+        <li>
+          <a  routerLink="/newsletter">
+            <i class="fa-solid fa-envelope  "> </i>
+            <span class="links_name">Newsletters</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="#">
+            <i class="bx bx-log-out"></i>
+            <span class="links_name">Déconnexion</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <section class="home-section">
+      <nav>
+        <div class="sidebar-button">
+          <i class="bx bx-menu sidebarBtn"></i>
+          <span class="dashboard">Dashboard</span>
+        </div>
+        <div class="search-box">
+          <input type="text" placeholder="Search..." />
+          <i class="bx bx-search"></i>
+        </div>
+        <div class="profile-details">
+          <img src="images/profile.jpg" alt="" />
+          <span class="admin_name">sowfatima</span>
+          <i class="bx bx-chevron-down"></i>
+        </div>
+      </nav>
+
+      <div class="home-content">
+       
+<!-- contenu -->
+
+<p>paragraphe</p>
+
+
+
+
+
+
+<!-- fin contenu -->
+
+
+
+
+
+
+        
+      </div>
+    </section>
+    <script D:\admin-dashboard-in-html-css\Admin Dashboard\script.js></script>
+
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      };
+    </script>
+  </body>
+</html>

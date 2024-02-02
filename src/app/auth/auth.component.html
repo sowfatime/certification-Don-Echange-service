@@ -1,0 +1,37 @@
+<div class="login container-fluid">
+    <div class="image-background">
+        <img src="../../../assets/img inscription.jpg" alt="">
+    </div>
+    <div class="login-box">
+    </div>
+    <div class="wrapper">
+        <form class="form-signin">
+            <div class="login container-fluid">
+                <div class="image-background">
+             
+                <form >
+                    <div class="div">
+                    <h2  class="form-signin-heading text-center" >Inscription</h2>
+                    <input type="text" class="form-control" name="name" placeholder="Nom complet" required="" autofocus="" [(ngModel)]="name" />
+                    <input type="tel" class="form-control" name="telephone" placeholder="Téléphone" required="" [(ngModel)]="telephone" />
+                    <input type="text" class="form-control" name="email" placeholder="Email" required=""
+                        autofocus="" [(ngModel)]="email" />
+                    <input type="file" class="form-control" name="photo" placeholder="Image" required="" autofocus=""
+                        [(ngModel)]="photo" />
+                        <div class="passs-form">
+                            <input type="password" class="form-control" name="password" placeholder="Mot de passe" required="" [(ngModel)]="password" />
+                        </div>
+                    <label class="checkbox">
+                        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> J'accepte les termes et conditions
+                    </label>
+                    <button class="btn-login btn btn-lg btn-primary btn-block w-100" type="submit" (click)="inscription()" router>Soumettre</button>
+                    <p>Vous avez pdéjà un compte ? <a ></a><span class="no-account"   style="cursor: pointer;color: rgb(71, 71, 166);"> Se connecter</span></p>
+                </div>
+                </form>
+            </div>
+            </div>
+            
+        </form>
+    </div>  
+</div><br>
+

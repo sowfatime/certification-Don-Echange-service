@@ -1,0 +1,23 @@
+.bx bx-search{
+  background-color: aliceblue;
+}
+#titlelist{
+  padding-left: 45%;
+}
+.titlelisteuser{
+text-align: center;
+font-weight: bold;
+font-style: normal;
+
+}
+.user-photo {
+  max-width: 50px;
+  max-height: 50px;
+}
+.custom-btn {
+  background-color: #023047;
+}
+.custom-table {
+  background-color: #023047;
+  border-radius: 15px;
+}
