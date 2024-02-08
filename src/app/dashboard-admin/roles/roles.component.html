@@ -1,1 +1,50 @@
-<p>roles works!</p>
+
+       
+       <section class="home-section">
+         
+         <div class="home-content">
+          
+   <!-- contenu -->
+  
+
+
+
+    <div class="roles-section">
+        <div class="roles-header">
+          <button class="add-role-btn">Ajouter un rôle</button>
+        </div>
+        <h2 class="roles-title">Liste des rôles</h2>
+        <div class="roles-list">
+          <button class="role-btn">Utilisateur</button>
+          <button class="role-btn">Administrateur</button>
+        </div>
+      </div>
+      
+   
+   
+   
+   
+   <!-- fin contenu -->
+   
+   
+   
+   
+   
+   
+           
+         </div>
+       </section>
+       <script D:\admin-dashboard-in-html-css\Admin Dashboard\script.js></script>
+   
+       <script>
+         let sidebar = document.querySelector(".sidebar");
+         let sidebarBtn = document.querySelector(".sidebarBtn");
+         sidebarBtn.onclick = function () {
+           sidebar.classList.toggle("active");
+           if (sidebar.classList.contains("active")) {
+             sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+           } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+         };
+       </script>
+    
+   

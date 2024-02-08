@@ -29,7 +29,7 @@ inscription(){
     (data) => {
       console.log(data);
     },
-          this.route.navigate(['/login'])
+          this.route.navigate(['/utilisateur'])
 
   )
 }

@@ -10,11 +10,11 @@ import { ContactComponent } from './composants/page-user/contact/contact.compone
 import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './auth/login/login.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
-import { UtilisateurComponent } from './dashboard-admin/utilisateur/utilisateur.component';
-import { RolesComponent } from './dashboard-admin/roles/roles.component';
-import { AnnonceComponent } from './dashboard-admin/annonce/annonce.component';
-import { SidebarComponent } from './layout/navbar/sidebar/sidebar.component';
 import { AcceuilAdminComponent } from './dashboard-admin/acceuil-admin/acceuil-admin.component';
+import { RolesComponent } from './dashboard-admin/roles/roles.component';
+import { UtilisateurComponent } from './dashboard-admin/utilisateur/utilisateur.component';
+
+
 
 
 
@@ -30,13 +30,22 @@ const routes: Routes = [
   { path:"auth" , component: AuthComponent},
   { path:"login", component: LoginComponent,},
   { path: "navbar", component: NavbarComponent},
-  { path: "utilisateur",component: UtilisateurComponent},
-  { path: "roles", component: RolesComponent},
-  { path: "Annonce", component: AnnonceComponent},
-  { path: "article", component: ArticlesComponent},
-  { path: "sidebar", component: SidebarComponent},
-  { path: "acceuil-admin",component: AcceuilAdminComponent}
+  { path: "articles", component: ArticlesComponent},
+  { path: "aceuil-admin", component: AcceuilAdminComponent},
+  { path: "roles", component:RolesComponent},
+  { path: "utilisateur", component:UtilisateurComponent},
 
+
+
+
+
+
+  
+{
+  path: 'admin',
+  loadChildren: () =>
+    import('./dashboard-admin/admin.module').then((m) => m.AdminModule)
+},
 
 
 

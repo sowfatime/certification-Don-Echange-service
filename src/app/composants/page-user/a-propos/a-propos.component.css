@@ -1,5 +1,5 @@
 main{
-    height: 1800px;
+    height: 2097px;
     
 } 
 .img-responsive{
@@ -26,7 +26,50 @@ background-color: rgb(221, 224, 226);
   font-size: 1.1rem;
   /* font-weight: 600; */
   /* text-align: center; */
-  padding-left: 19rem;
-  padding-right: 7rem;
-  margin-top: 1.5rem;
+  padding-left: 2rem;
+  /* padding-right: 7rem; */
+  /* margin-top: 1.5rem; */
+  padding-right: 5%;
 }
+
+.imgapropos{
+  padding-left: 5%;
+}
+.carac{
+  text-align: center;
+}
+.Container_Content_Section3_Cards{
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;  
+}
+.titre1,
+.titre2 {
+  display: flex;
+  justify-content: center;
+  font-family: 'Times New Roman', Times, serif;
+  padding-top: 5px;
+}
+.Container_Content_Section4_Cards{
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;  
+ padding-left: 10%;
+}
+.tittext{
+padding-left: 4%;
+font-weight: normal   ;
+}
+.card-img-top{
+  border-radius: 3%;
+}
+.FeatureProduct_card card{
+   border-radius: 2%;
+
+}
+/* #bouge{
+ margin-right: 5%;
+}
+#bougeone{
+  margin-right: 5%;
+ } */

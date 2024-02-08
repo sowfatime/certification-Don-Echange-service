@@ -17,16 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './auth/login/login.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
-import { UtilisateurComponent } from './dashboard-admin/utilisateur/utilisateur.component';
-import { RolesComponent } from './dashboard-admin/roles/roles.component';
-import { AnnonceComponent } from './dashboard-admin/annonce/annonce.component';
-import { ArticleComponent } from './dashboard-admin/article/article.component';
-import { CategorieComponent } from './dashboard-admin/categorie/categorie.component';
-import { CommentaireComponent } from './dashboard-admin/commentaire/commentaire.component';
-import { LocaliteComponent } from './dashboard-admin/localite/localite.component';
-import { NewsletterComponent } from './dashboard-admin/newsletter/newsletter.component';
-import { SidebarComponent } from './layout/navbar/sidebar/sidebar.component';
-import { AcceuilAdminComponent } from './dashboard-admin/acceuil-admin/acceuil-admin.component';
+import { SidebareComponent } from './dashbord-admin/sidebare/sidebare.component';
 
 
 
@@ -45,16 +36,8 @@ import { AcceuilAdminComponent } from './dashboard-admin/acceuil-admin/acceuil-a
     AuthComponent,
     LoginComponent,
     NavbarComponent,
-    UtilisateurComponent,
-    RolesComponent,
-    AnnonceComponent,
-    ArticleComponent,
-    CategorieComponent,
-    CommentaireComponent,
-    LocaliteComponent,
-    NewsletterComponent,
-    SidebarComponent,
-    AcceuilAdminComponent,
+    SidebareComponent,
+  
     
  
 

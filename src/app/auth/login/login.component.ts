@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { AuthServiceService } from 'src/app/authservice.service';
 
 @Component({
@@ -10,12 +11,14 @@ import { AuthServiceService } from 'src/app/authservice.service';
 
 export class LoginComponent implements OnInit {
   showMessage: string | undefined;
-  router: any;
+ 
   ngOnInit(): void {
 
   }
 
-  constructor(private authen: AuthServiceService) { }
+  constructor(private authen: AuthServiceService
+              ,private router : Router          
+    ) { }
   // variables pour se connecter
   email = "";
   password: any = "";
@@ -27,21 +30,33 @@ export class LoginComponent implements OnInit {
     }
     console.log(data);
     this.authen.login(data).subscribe(
-      (response) => {
+      (response : any) => {
         console.log("voir", response);
-        this.router.navigate(['/accueil']);
+      
+        if(response.access_token){
+          if( response.role == 1 &&  response.is_bloqued == 0){
+          
+            console.log("fffffffff", response.access_token);
+            localStorage.setItem('tokenstorage', response.access_token);
+            // this.router.navigate(['/accueil']);
+          }
+          else if(response.role == 2 &&  response.is_bloqued == 0 ){
+            console.log("fffffffff", response.access_token);
+            localStorage.setItem('tokenstorage', response.access_token);
+          this.router.navigate(['/accueil']);
+          }
+          else{
+
+          }
+        }
+        else{
+
+        }
+      
 
       });
 
-    // if (this.showMessage == "") {
-    //   this.verifierChamps('Champs obligatoire', 'Veuillez remplir les champs', 'error');
-    // }
-    // else {
-    //   this.verifierChamps('Félicitation!', 'Connexion réussie', 'success');
-    // }
-    // this.viderChamps();
-
-
+ 
 
   }
   viderChamps() {

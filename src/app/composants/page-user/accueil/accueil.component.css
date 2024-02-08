@@ -123,5 +123,12 @@
   .white{
     color:white ;
   } */
-  
+  .pull-right {
+    float: right;
+    /* margin-bottom: 25%; */
+  }
+  .card {
+    height: 100%;
+}
+
  
