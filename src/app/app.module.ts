@@ -18,6 +18,7 @@ import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './auth/login/login.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { SidebareComponent } from './dashbord-admin/sidebare/sidebare.component';
+// import { TokenInterceptorProvider } from './interceptors/interceptor';
 
 
 
@@ -48,7 +49,7 @@ import { SidebareComponent } from './dashbord-admin/sidebare/sidebare.component'
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  // providers: [TokenInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

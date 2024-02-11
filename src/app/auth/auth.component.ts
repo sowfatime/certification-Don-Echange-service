@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthServiceService } from '../authservice.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-auth',
@@ -7,11 +9,11 @@ import { AuthServiceService } from '../authservice.service';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
-  name: string="fdsfq";
-  email: string = "dsff@dd.com";
-  telephone:string="qfsd";
+  name: string="";
+  email: string = "";
+  telephone:string="";
   photo: any;
-  password: string="Passer@12";
+  password: string="";
   route: any;
 ngOnInit(): void {
 }

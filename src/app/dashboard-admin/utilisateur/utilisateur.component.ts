@@ -15,9 +15,30 @@ constructor (private userservice : UserService){}
 
 afficherUser() :  void{
   this.userservice.getUser().subscribe((respons)=>{
-    this.tabUser = respons;
-    console.log("voir user connecte", respons);
+    this.tabUser = respons.Utilisateurs;
+    console.log("voir user connecte", this.tabUser);
   })
 }
+
+bloqueUser(id: number){
+  this.userservice.bloque(id).subscribe(
+    (data) => {
+      console.log(data)
+      this.afficherUser();
+    }
+  )
+}
+
+
+debloqueUser(id: number){
+  this.userservice.debloque(id).subscribe(
+    (data) => {
+      console.log(data)
+      this.afficherUser();
+    }
+  )
+}
+
+
 
 }
