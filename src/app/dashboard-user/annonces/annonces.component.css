@@ -1,4 +1,4 @@
-/* .titlelisteannonce{
+.titlelisteannonce{
     text-align: center;
     font-weight: bold;
     font-style: normal;
@@ -23,7 +23,7 @@
            }
            .titreh5{
             text-align: center;
-           } */
+           }
            .Container_Content {
             margin-top: 60px;
           }
@@ -54,5 +54,5 @@
             text-align: center;
           }
            .carte-margin {
-        margin-bottom: 20px; /* Vous pouvez ajuster cette valeur selon l'espacement désiré */
+        margin-bottom: 20px; 
     }

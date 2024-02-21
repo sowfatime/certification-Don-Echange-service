@@ -1,13 +1,14 @@
 <div class="divbutton d-flex container">
     <button type="button" class="btn btn-primary mb-3 mt-2 me-4" data-bs-toggle="modal"
         data-bs-target="#exampleModal">Faire une annonce</button>
+        
     <!-- <button type="button" class="btn btn-primary mb-3 mt-2">Faire Echange</button> -->
 </div>
 <div class="row container">
     <div class="d-flex w-100 flex-wrap">
         <div id="carteannonce" class="card me-3" *ngFor="let annonce of listeAnnonce" style="width: 23%;">
 
-            <img src="http://localhost:8000/{{annonce.images.image}}" alt="Card image cap">
+            <img src="http://localhost:8000/{{annonce.images.image}}" alt="Card image cap" width="228vh" height="180vh">
             <div class="card-body">
                 <h5 class="">{{annonce.annonce.libelle}}</h5>
                 <p class="">{{annonce.annonce.description}}</p>
@@ -19,7 +20,7 @@
                     <button class="bottonbleucard" style="padding: 10px 20px; border-radius: 7px;">Voir plus</button>
                 </div>
             </div>
-        </div>
+        </div>  
     </div>
 </div>
 
@@ -43,49 +44,49 @@
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"
                         [(ngModel)]="description"></textarea>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3">Etat
                     <select class="form-select" aria-label="Default select example" name="etat" [(ngModel)]="etat">
-                        <option selected>Etat</option>
+                        <option selected></option>
                         <option value="Comme Neuf">Comme Neuf</option>
                         <option value="Bon Etat"> Bon Etat</option>
                         <option value="Etat Moyen">Etat Moyen</option>
                         <option value="A Bricoler">A Bricoler</option>
                     </select>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3">Type d’annonce
                     <select class="form-select" aria-label="Default select example" name="type" [(ngModel)]="type">
-                        <option selected>Type d’annonce</option>
+                        <option selected></option>
                         <option value="Don">Don</option>
                         <option value="Echange">Echange</option>
                     </select>
 
                 </div>
-                <div class="mb-3">
+                <div class="mb-3">Catégories
 
                     <select id="selectcatégorie" class="form-select form-select-lg mb-2 w-100"
                         aria-label=".form-select-lg example" name="categorie" [(ngModel)]="categorie">
-                        <option value="1">Catégories</option>
+                        <option value="1"></option>
                         <option *ngFor="let  catego of  dataCategorie" [value]="catego.id">{{catego.libelle}} </option>
                     </select>
 
                 </div>
-                <div class="mb-3 w-100">
+                <div class="mb-3 w-100">Localité
                     <select id="selectLocalité" class="form-select form-select-lg mb-2 w-100"
                         aria-label=".form-select-lg example" name="localite" [(ngModel)]="localite">
-                        <option value="1">Localité</option>
+                        <option value="1"></option>
                         <option *ngFor="let  localite of  dataLocalites" [value]=" localite.id">{{ localite.nom}}
                         </option>
                     </select>
 
                 </div>
 
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Date limite </label>
+                <div class="mb-3">Date limite
+                    <label for="exampleFormControlInput1" class="form-label"> </label>
                     <input type="date" class="form-control" id="exampleFormControlInput1" name="date_limite"
                         [(ngModel)]="date_limite">
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-3">image
                     <label for="formFile" class="form-label" *ngFor="let annonce of tabAnnonce">
                         <img src="http://localhost:8000/{{annonce.images.image}}">
                     </label>

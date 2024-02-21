@@ -32,12 +32,14 @@
     text-align: center;
   }
   
-  /* .Container_Section_Cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-  } */
+ 
+ .imgModal{
+  border: 1px solid red;
+  width: 400px;
+  height: 450px;
+ } 
+ 
+  
   
   .Container_Section_Cards .card img {
     width: auto;
