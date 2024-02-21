@@ -8,16 +8,14 @@
       <div class="home-content">
        
 <!-- contenu -->
-
-
-
-
-
-  <!-- tableau gestion des utilisateur -->
-  <div class="row">
+ <!-- tableau gestion des utilisateur -->
+ <br><br>
+ <h3 class="titlelisteuser">Liste des utilisateurs</h3>
+ <div class="container">
+   <div class="row">
     <div class="col-lg-12 col-lg-3">
-      <div class="card">
-        <h5 class="titlelisteuser">Liste des utilisateurs</h5>
+      <div class="">
+       
         <div class="table-responsive">
           <table class="table table-striped custom-table">
             <thead>
@@ -31,15 +29,19 @@
             </thead>
             <tbody>
               <tr *ngFor="let user of tabUser">
-                <td><img src="{{ user.photo }}" class="user-photo" alt="Photo utilisateur"></td>
+                <td><img src="http://localhost:8000/{{ user.photo }}" class="user-photo" alt="Photo utilisateur"></td>
                 <td>{{ user.name}}</td>
                 <td>{{user.email }}</td>
                 <td>{{ user.telephone }}
                 </td>
-         
                 <td>
-<button class="btn btn-danger" type="button" (click)="bloqueUser(user.id)" *ngIf="user.is_bloqued===0">Bloquer</button>
-<button class="btn btn-primary custom-btn" type="button" (click)="debloqueUser(user.id)" *ngIf="user.is_bloqued===1">Debloquer</button>                  <span style="margin-left: 12px;"></span>
+<button class="btn btn-danger" type="button" (click)="bloqueUser(user.id)" *ngIf="user.is_bloqued===0">
+  Bloquer
+</button>
+<button class="btn btn-primary custom-btn" type="button" (click)="debloqueUser(user.id)" *ngIf="user.is_bloqued===1">
+  Debloquer
+</button>   
+ <span style="margin-left: 12px;"></span>
                 </td>
               </tr>
           
@@ -52,6 +54,8 @@
 
 
   </div>
+ </div>
+ 
 
 
 

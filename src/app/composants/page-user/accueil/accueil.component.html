@@ -24,174 +24,218 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
-</div><br>
-<h3 class="premiersoustitreacceuil"><i class="fa-solid fa-diamond -#"></i>&nbsp;Catégories</h3>
+</div>
+<br>
+<h4 class="filtre">Filtrer ici</h4>
 <!------------- Debut Section du Contenu------------- -->
 <div class="Container_Content">
     <div class="Container_Content_Section2">
         <div>
         </div>
-        <div class="titre2">
-            <select class="form-select form-select-lg mb-2 w-75" aria-label=".form-select-lg example">
-                <option selected>Electromenager - &nbsp;&nbsp;Meuble &nbsp;- &nbsp;&nbsp;Vetement - &nbsp;&nbsp;Mobile
-                    et technologie &nbsp;- &nbsp;&nbsp; Autres Catégories</option>
-                <option value="1">Meubles</option>
-                <option value="2">Vetements</option>
-                <option value="3">Mobile et Technologie</option>
-                <option value="4">Autres Catégories</option>
-            </select>
-        </div>
-        <br> <br>
-        <div class="titre3">
-            <h3><i class="fa-solid fa-diamond -#"></i>&nbsp;Annonces <button type="button"
-                class="btn btn-outline-secondary pull-right">Rechercher ...<i class="fa-solid fa-magnifying-glass"></i></button></h3>
-             
+        <div class="container categorie">
+            <div class="titre2" >
+                <select id="selectcatégorie" class="form-select form-select-lg mb-2 w-25" aria-label=".form-select-lg example" > 
+                    <option value="1">Catégories</option>
+                    <option *ngFor="let  catego of  dataCategorie" [value]="catego.id">{{catego.libelle}} </option>
+                  
+                </select>
+            </div>
+            <div class="titre4">
+                <select id="selectLocalité" class="form-select form-select-lg mb-2 w-25" aria-label=".form-select-lg example" > 
+                    <option value="1">Localité</option>
+                    <option *ngFor="let  localite of  dataLocalites" [value]=" localite.id">{{ localite.nom}} </option>
 
-        </div><br>
-     
-    </div>
-    </div> 
+
+                </select>
+            </div>
+            
+                <div class="titre4">
+                    <select id="selectType" class="form-select form-select-lg mb-2 w-25" aria-label=".form-select-lg example" (click)="affichertypes()"> 
+                        <option value="1">Type</option>
+                        
+
+                        
+                       
+                    </select>    
+    
+            </div>
+            <br> <br>
+            <div class="titre3"><br>
+                <h3><i class="fa-solid fa-diamond -#"></i>&nbsp;Annonces </h3><br>
+                <!-- <button type="button"
+                    class="btn btn-outline-secondary pull-right">Rechercher ...<i class="fa-solid fa-magnifying-glass"></i></button> -->
+                 
+    
+            </div><br>
+         
+        </div>
+
+        </div>
+</div> 
 
     <div class="container">
-        <div class="row">
+    
             <!-- Carte Machine à laver -->
-            <div class="col-md-4">
-                <div class="card" style="width: 20rem;">
-                    <img class="card-img-top"
-                        src="https://blog-media.but.fr/wp-content/uploads/2023/06/01-lave-linge-blanc-1.jpg"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Machine à laver</h5>
-                        <p class="card-text">Cette machine à laver de qualité supérieure est conçue pour répondre à tous vos besoins en matière de lessive, il est Rapide et Efficace.</p>
-                        <div style="display: flex; justify-content: space-between;">
-                            <p><span class="red">Type: </span>Echange</p>
-                            <p style="margin-left: 10px;"><span class="red">État: </span>Bon</p>
-                        </div>
-                        <div style="text-align: center; padding-top: 20px;">
-                            <button class="bottonbleucard" style="padding: 10px 20px; border-radius: 7px;">Voir plus</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Carte Réfrigérateur -->
-            <div class="col-md-4">
-                <div class="card" style="width: 20rem;">
-                    <img class="card-img-top"
-                        src="https://blog-media.but.fr/wp-content/uploads/2023/06/01-lave-linge-blanc-1.jpg"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Réfrigérateur</h5>
-                        <p class="card-text">Ce réfrigérateur est en bon état de fonctionnement et peut être une excellente solution pour ceux qui ont besoin d'un nouvel appareil électroménager.</p>
-                        <div style="display: flex; justify-content: space-between;">
-                            <p><span class="red">Type: </span>Echange</p>
-                            <p style="margin-left: 10px;"><span class="red">État: </span>Bon</p>
-                        </div>
-                        <div style="text-align: center; padding-top: 20px;">
-                            <button class="bottonbleucard" style="padding: 10px 20px; border-radius: 7px;">Voir plus</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Carte Mixeur -->
-            <div class="col-md-4">
-                <div class="card" style="width: 20rem;">
-                    <img class="card-img-top"
-                        src="https://blog-media.but.fr/wp-content/uploads/2023/06/01-lave-linge-blanc-1.jpg"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Mixeur</h5>
-                        <p class="card-text">Ce mixeur puissant est parfait pour préparer de délicieux smoothies, des soupes crémeuses et bien d'autres recettes. Grâce à ses lames tranchantes.</p>
-                        <div style="display: flex; justify-content: space-between;">
-                            <p><span class="red">Type: </span>Echange</p>
-                            <p style="margin-left: 10px;"><span class="red">État: </span>Bon</p>
-                        </div>
-                        <div style="text-align: center; padding-top: 20px;">
-                            <button class="bottonbleucard" style="padding: 10px 20px; border-radius: 7px;">Voir plus</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><br>
-        <div class="row">
-    
-        <!-- Carte Fauteuil -->
-        <div class="col-md-4 mb-4 mb-4">
-            <div class="card" style="width: 20rem;">
-                <img class="card-img-top" src="https://blog-media.but.fr/wp-content/uploads/2023/06/01-lave-linge-blanc-1.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Fauteuil</h5>
-                    <p class="card-text">Ce fauteuil confortable est parfait pour se détendre en lisant un livre ou en regardant la télévision.</p>
-                    <div style="display: flex; justify-content: space-between;">
-                        <p><span class="red">Type: </span>Don</p>
-                        <p style="margin-left: 10px;"><span class="red">État: </span>Bon</p>
-                    </div>
-                    <div style="text-align: center; padding-top: 20px;">
-                        <button class="bottonbleucard" style="padding: 10px 20px; border-radius: 7px;">Voir plus</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-        <!-- Carte Armoire -->
-        <div class="col-md-4 mb-4 mb-4">
-            <div class="card" style="width: 20rem;">
-                <img class="card-img-top" src="https://blog-media.but.fr/wp-content/uploads/2023/06/01-lave-linge-blanc-1.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Armoire</h5>
-                    <p class="card-text">Cette armoire spacieuse offre beaucoup d'espace de rangement pour vos vêtements et accessoires.</p>
-                    <div style="display: flex; justify-content: space-between;">
-                        <p><span class="red">Type: </span>Don</p>
-                        <p style="margin-left: 10px;"><span class="red">État: </span>Bon</p>
-                    </div>
-                    <div style="text-align: center; padding-top: 20px;">
-                        <button class="bottonbleucard" style="padding: 10px 20px; border-radius: 7px;">Voir plus</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-        <!-- Deuxième Carte Fauteuil -->
-        <div class="col-md-4 mb-4 mb-4">
-            <div class="card" style="width: 20rem;">
-                <img class="card-img-top" src="https://blog-media.but.fr/wp-content/uploads/2023/06/01-lave-linge-blanc-1.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Fauteuil</h5>
-                    <p class="card-text">Ce fauteuil confortable est parfait pour se détendre en lisant un livre ou en regardant la télévision.</p>
-                    <div style="display: flex; justify-content: space-between;">
-                        <p><span class="red">Type: </span>Don</p>
-                        <p style="margin-left: 10px;"><span class="red">État: </span>Bon</p>
-                    </div>
-                    <div style="text-align: center; padding-top: 20px;">
-                        <button class="bottonbleucard" style="padding: 10px 20px; border-radius: 7px;">Voir plus</button>
-                    </div>
-                </div>
-            </div>
-    </div>
-</div> 
-</div>   
+          
+            <!-- w-100 d-flex justify-content-between" style="margin: 0 auto; -->
+            <div class="row">
+               <div class="col-12 col-md-3 " *ngFor="let annonce of tabAnnonce">
+                <div  id="carteannonce"class="card">
+                    <div style="height: 260px;"   >
 
-  <script>
-    function afficherDetails(titre, type, etat, description, imageSrc, adresse, statut) {
-        var detailsContent = document.getElementById('detailsContent');
-        detailsContent.innerHTML = '<div class="row">' +
-            '<div class="col-md-4">' +
-            '<img class="img-fluid" src="' + imageSrc + '" alt="' + titre + '">' +
-            '</div>' +
-            '<div class="col-md-8">' +
-            '<h5>' + titre + '</h5>' +
-            '<p><strong>Type:</strong> ' + type + '</p>' +
-            '<p><strong>État:</strong> ' + etat + '</p>' +
-            '<p><strong>Description:</strong> ' + description + '</p>' +
-            '<p><strong>Adresse:</strong> ' + adresse + '</p>' +
-            '<p><strong>Statut:</strong> ' + statut + '</p>' +
-            '</div>' +
-            '</div>';
-        $('#detailsModal').modal('show');
-    }
-</script>
+                        <img  src="http://localhost:8000/{{annonce.images.image}}"
+                        
+                            alt="Card image cap" style="width: 100%;">
+                    </div>
+                   
+                    <div class="card-body">
+                        <h5 class="">{{annonce.annonce.libelle}}</h5>
+                        <p class="">{{annonce.annonce.description}}</p>
+                        <div style="display: flex; justify-content: space-between;">
+                            <p><span class="red">Type:</span>&nbsp;{{annonce.annonce.type}} </p>
+                            <p class="red"style="margin-left: 10px;"><span></span>&nbsp;{{annonce.annonce.etat}}</p>
+                        </div>
+                        <div style="text-align: center; padding-top: 20px;">
+                            <button class="bottonbleucard" style="padding: 10px 20px; border-radius: 7px;" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="voirDetailAnnonce(annonce.annonce.id)">Voir plus</button>
+                        </div>
+                    </div> 
+                </div>
+               </div>
+            </div>
+
+            <!-- <div class="row">
+                <div class="col-12" *ngFor="let annonce of tabAnnonce">
+                    <h5 class="text-dark"> {{annonce.libelle}} </h5>
+                    <p> {{annonce.annonce.id}} </p>
+                </div>
+            </div> - -->
+      
+        </div>
+            
+       
+   <br> 
+
+
+
 
     
 
     <app-footer></app-footer>
+
+
+
+
+    <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" >
+    Launch demo modal
+</button> -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Détails Annonce</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- <div class="modal-body">
+            <div class="row">
+
+
+
+
+
+                <div class="user-info d-flex align-items-center ">
+                    <img src="http://127.0.0.1:8000/{{ username?.photo }}" alt="Photo de l'utilisateur" class="user-photo rounded-circle" style="width: 70px; height: 70px; object-fit: cover;">
+
+                    <p class="ml-4"><strong>Annonce publiée par: </strong> {{ username?.nom }}</p>
+            
+                </div>
+                
+            
+            
+
+                <div class="col-md-6">
+                    <div class="detail-container">
+                        <h2>{{ detailannonce?.categorie }}</h2>
+                        <p><strong>Description :</strong> {{ detailannonce?.description }}</p>
+                        <p><strong>État :</strong> {{ detailannonce?.etat}}</p>
+                        <p><strong>Type :</strong> {{ detailannonce?.type}}</p>
+                        <p><strong>Catégorie :</strong> {{ detailannonce?.categorie}}</p>
+                        <p><strong>Localité :</strong> {{ detailannonce?.localite}}</p>
+                        <p><strong>Date limite :</strong> {{detailannonce?.date_limite}}</p>
+                    </div>
+
+
+    
+
+
+
+                    
+                </div>
+        
+                <div class="col-md-6">
+                    <div class="image-container">
+                        <h3></h3>
+                        <div *ngIf="detailannonceimage.length > 0" class="image-gallery">
+                            <div *ngFor="let image of detailannonceimage" class="gallery-item">
+                                <img src="http://localhost:8000/{{image.image}}" alt="Image de l'annonce" class="img-thumbnail">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         -->
+          
+         <div class="modal-body">
+            <div class="row">
+                <!-- Informations sur l'utilisateur -->
+                <div class="user-info d-flex align-items-center mb-4">
+                    <img src="http://127.0.0.1:8000/{{ username?.photo }}" alt="Photo de l'utilisateur" class="user-photo rounded-circle" style="width: 50px; height: 50px; object-fit: cover;">
+                    <p class="ml-4"><strong>Annonce publiée par: </strong> {{ username?.nom }}</p>
+
+                    
+                </div>
+                
+                <!-- Détails de l'annonce -->
+                <div class="col-md-6">
+                    <div class="detail-container">
+                        <h2>{{ detailannonce?.categorie }}</h2>
+                        <p><strong>Description :</strong> {{ detailannonce?.description }}</p>
+                        <p><strong>État :</strong> {{ detailannonce?.etat}}</p>
+                        <p><strong>Type :</strong> {{ detailannonce?.type}}</p>
+                        <p><strong>Catégorie :</strong> {{ detailannonce?.categorie}}</p>
+                        <p><strong>Localité :</strong> {{ detailannonce?.localite}}</p>
+                        <p><strong>Date limite :</strong> {{detailannonce?.date_limite}}</p>
+                    </div>
+                </div>
+        
+                <!-- Carrousel d'images de l'annonce -->
+                <div class="col-md-6">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div *ngFor="let image of detailannonceimage; let i = index" class="carousel-item" [ngClass]="{'active': i === 0}">
+                                <img src="http://localhost:8000/{{image.image}}" alt="Image de l'annonce" class="d-block w-75">
+                            </div>
+                            
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+         <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> 

@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
+// import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +19,14 @@ import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './auth/login/login.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { SidebareComponent } from './dashbord-admin/sidebare/sidebare.component';
-// import { TokenInterceptorProvider } from './interceptors/interceptor';
+import { SidebarComponent } from './dashboard-users/sidebar/sidebar.component';
+import { AcceuilUserComponent } from './dashboard-users/acceuil-user/acceuil-user.component';
+import { AnnoncesComponent } from './dashboard-users/annonces/annonces.component';
+import { DonsComponent } from './dashboard-users/dons/dons.component';
+import { EchangesComponent } from './dashboard-users/echanges/echanges.component';
+import { ProfilComponent } from './dashboard-users/profil/profil.component';
+// import { MainUserComponent } from './dashboard-users/main-user/main-user.component';
+import { TokenInterceptorProvider } from './interceptors/interceptor';
 
 
 
@@ -38,6 +46,13 @@ import { SidebareComponent } from './dashbord-admin/sidebare/sidebare.component'
     LoginComponent,
     NavbarComponent,
     SidebareComponent,
+    SidebarComponent,
+    AcceuilUserComponent,
+    AnnoncesComponent,
+    DonsComponent,
+    EchangesComponent,
+    ProfilComponent,
+    // MainUserComponent,
   
     
  
@@ -47,7 +62,7 @@ import { SidebareComponent } from './dashbord-admin/sidebare/sidebare.component'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   // providers: [TokenInterceptorProvider],
   bootstrap: [AppComponent]

@@ -9,33 +9,41 @@ import { User } from 'src/app/models/user';
 })
 export class UserService {
 
-  constructor(private http :  HttpClient) { }
-  getUser() : Observable<any>{   
-     const accessToken = localStorage.getItem('access_token');
+  constructor(private http: HttpClient) { }
+  getUser(): Observable<any> {
+    const accessToken = localStorage.getItem('access_token');
 
-     return accessToken ?
-     this.http.get<any>(`${api}/users`, {
-       headers: new HttpHeaders({ 'Authorization': `Bearer ${accessToken}` })
-     }) :
-     of(null);
-      }
+    return accessToken ?
+      this.http.get<any>(`${api}/users`, {
+        headers: new HttpHeaders({ 'Authorization': `Bearer ${accessToken}` })
+      }) :
+      of(null);
+  }
 
-    bloque(id: number): Observable<any> {
-        const accessToken = localStorage.getItem('access_token');
-    
-        return accessToken ? this.http.put<any>(`${api}/bloquer/${id}`, {}, {
-          headers: new HttpHeaders({ 'Authorization': `Bearer ${accessToken}` })
-        }) : of(null);
-      }
+  bloque(id: number): Observable<any> {
+    const accessToken = localStorage.getItem('access_token');
+
+    return accessToken ? this.http.put<any>(`${api}/bloquer/${id}`, {}, {
+      headers: new HttpHeaders({ 'Authorization': `Bearer ${accessToken}` })
+    }) : of(null);
+  }
 
 
-      debloque(id: number): Observable<any> {
-        const accessToken = localStorage.getItem('access_token');
-    
-        return accessToken ? this.http.put<any>(`${api}/debloquer/${id}`, {}, {
-          headers: new HttpHeaders({ 'Authorization': `Bearer ${accessToken}` })
-        }) : of(null);
-      }
+  debloque(id: number): Observable<any> {
+    const accessToken = localStorage.getItem('access_token');
+
+    return accessToken ? this.http.put<any>(`${api}/debloquer/${id}`, {}, {
+      headers: new HttpHeaders({ 'Authorization': `Bearer ${accessToken}` })
+    }) : of(null);
+  }
+
+  getAnnonce(): Observable<any> {
+    const accessToken = localStorage.getItem('access_token');
+
+    return accessToken ? this.http.get<any>(`${api}/annonces`, {
+      headers: new HttpHeaders({ 'Authorization': `Bearer ${accessToken}` })
+    }) : of(null);
+  }
 
 
 

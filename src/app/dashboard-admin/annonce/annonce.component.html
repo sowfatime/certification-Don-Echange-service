@@ -1,4 +1,52 @@
 
       
-        <h5 class="titlelisteannonce">Liste des annonces</h5>
-      
+        <h5 class="titlelisteannonce">Liste des annonces</h5> <br>
+
+
+        <!-- <div class="row">
+
+                <div class="col-md-4" *ngFor="let annonce of annonce" >
+                    <div class="card mx-4" style="width: 20rem;">
+                        <img class="card-img-top" src="https://blog-media.but.fr/wp-content/uploads/2023/06/01-lave-linge-blanc-1.jpg"alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title" >{{annonce.annonce.libelle}}</h5>
+                            <p class="card-text">{{annonce.annonce.description}}</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <p><span class="red">Type: </span>{{annonce.annonce.type}}</p>
+                                <p style="margin-left: 10px;"><span class="red">État: </span>{{annonce.annonce.etat}}</p>
+                                
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <p><span class="red">Statut: </span>Disponible</p>
+                                <p style="margin-left: 10px;"><span class="red">Adresse: </span>Dakar</p>
+                                
+                            </div>
+
+                            <div style="display: flex; justify-content: space-between;">
+                                <p><span class="red">jour de publi: </span>{{annonce.created_at | date  }}</p><br>
+                                <p style="margin-left: 10px;"><span class="red">Fin de publication: </span>{{annonce.date_limite}}</p>
+                                
+                            </div>
+                            <div style="text-align: center; padding-top: 20px;">
+                                <button class="bottonbleucard" style="padding: 10px 20px; border-radius: 7px;">Supprimer l'annonce</button>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="row">
+                        <div class="col-12 col-md-3 " *ngFor="let annonce of tabAnnonce">
+                         <div  id="carteannonce"class="card">
+                            <img  src="http://localhost:8000/{{annonce.images.image}}"
+                                 alt="Card image cap" style="height: 100%;">
+                             <div class="card-body">
+                                 <h5 class="">{{annonce.annonce.libelle}}</h5>
+                                 <p class="">{{annonce.annonce.description}}</p>
+                                 <div style="display: flex; justify-content: space-between;">
+                                     <p><span class="red">Type:</span>&nbsp;{{annonce.annonce.type}} </p>
+                                     <p class="red"style="margin-left: 10px;"><span></span>&nbsp;{{annonce.annonce.etat}}</p>
+                                 </div>
+                
+                             </div> 
+                         </div>
+                        </div>
+                     </div>               

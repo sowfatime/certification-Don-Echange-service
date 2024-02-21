@@ -21,3 +21,11 @@ font-style: normal;
   background-color: #023047;
   border-radius: 15px;
 }
+
+h3{
+  padding: 15px 0 25px 0;
+}
+
+.container{
+  width: 85%;
+}

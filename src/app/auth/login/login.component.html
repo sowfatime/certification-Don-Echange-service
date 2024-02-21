@@ -7,8 +7,12 @@
     <div class="wrapper">
         <form class="form-signin">
             <h2 class="form-signin-heading text-center">Connexion</h2>
-            <input type="text" class="form-control" name="email" placeholder="Adresse Email"  required="" autofocus="" [(ngModel)]="email" />
+            <input type="text" class="form-control" name="email" placeholder="Adresse Email"  required="" autofocus="" [(ngModel)]="email" (input)="verifEmailFunction()" />
+            <p class="text-danger">{{verifMessageEmail}}</p>
+            <!-- <p>"shsh"</p> -->
             <input type="password" class="form-control" name="password" placeholder="Mot de passe" required="" [(ngModel)]="password"  />
+            <p class="text-danger">{{verfiMessagePassword}}</p>
+
             <label class="checkbox">
                 <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Se souvenir de moi
             </label>

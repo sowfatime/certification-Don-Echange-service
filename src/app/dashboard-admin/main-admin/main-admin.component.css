@@ -6,11 +6,13 @@
 
 .main-content .navbar{
     border: 1px solid rgb(10, 10, 10);
+
 }
 
 .sidebar{
     height: 99vh;
     /* border: 1px solid orange; */
+    width: 90%;
 }
 
 .contenuMainAdmin{

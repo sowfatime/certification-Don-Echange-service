@@ -1,0 +1,108 @@
+<div class="divbutton d-flex container">
+    <button type="button" class="btn btn-primary mb-3 mt-2 me-4" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">Faire une annonce</button>
+    <!-- <button type="button" class="btn btn-primary mb-3 mt-2">Faire Echange</button> -->
+</div>
+<div class="row container">
+    <div class="d-flex w-100 flex-wrap">
+        <div id="carteannonce" class="card me-3" *ngFor="let annonce of listeAnnonce" style="width: 23%;">
+
+            <img src="http://localhost:8000/{{annonce.images.image}}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="">{{annonce.annonce.libelle}}</h5>
+                <p class="">{{annonce.annonce.description}}</p>
+                <div style="display: flex; justify-content: space-between;">
+                    <p><span class="red">Type:</span>&nbsp;{{annonce.annonce.type}} </p>
+                    <p class="red" style="margin-left: 10px;"><span></span>&nbsp;{{annonce.annonce.etat}}</p>
+                </div>
+                <div style="text-align: center; padding-top: 20px;">
+                    <button class="bottonbleucard" style="padding: 10px 20px; border-radius: 7px;">Voir plus</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Formulaire d'annonce</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Titre </label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="libelle"
+                        [(ngModel)]="libelle">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"
+                        [(ngModel)]="description"></textarea>
+                </div>
+                <div class="mb-3">
+                    <select class="form-select" aria-label="Default select example" name="etat" [(ngModel)]="etat">
+                        <option selected>Etat</option>
+                        <option value="Comme Neuf">Comme Neuf</option>
+                        <option value="Bon Etat"> Bon Etat</option>
+                        <option value="Etat Moyen">Etat Moyen</option>
+                        <option value="A Bricoler">A Bricoler</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <select class="form-select" aria-label="Default select example" name="type" [(ngModel)]="type">
+                        <option selected>Type d’annonce</option>
+                        <option value="Don">Don</option>
+                        <option value="Echange">Echange</option>
+                    </select>
+
+                </div>
+                <div class="mb-3">
+
+                    <select id="selectcatégorie" class="form-select form-select-lg mb-2 w-100"
+                        aria-label=".form-select-lg example" name="categorie" [(ngModel)]="categorie">
+                        <option value="1">Catégories</option>
+                        <option *ngFor="let  catego of  dataCategorie" [value]="catego.id">{{catego.libelle}} </option>
+                    </select>
+
+                </div>
+                <div class="mb-3 w-100">
+                    <select id="selectLocalité" class="form-select form-select-lg mb-2 w-100"
+                        aria-label=".form-select-lg example" name="localite" [(ngModel)]="localite">
+                        <option value="1">Localité</option>
+                        <option *ngFor="let  localite of  dataLocalites" [value]=" localite.id">{{ localite.nom}}
+                        </option>
+                    </select>
+
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Date limite </label>
+                    <input type="date" class="form-control" id="exampleFormControlInput1" name="date_limite"
+                        [(ngModel)]="date_limite">
+                </div>
+
+                <div class="mb-3">
+                    <label for="formFile" class="form-label" *ngFor="let annonce of tabAnnonce">
+                        <img src="http://localhost:8000/{{annonce.images.image}}">
+                    </label>
+                    <input class="form-control" type="file" id="formFile" (change)="getFile($event)" name="image">
+                </div>
+
+
+
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)=" onSubmit() 
+            ">Ajouter</button>
+            </div>
+        </div>
+    </div>
+</div>

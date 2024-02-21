@@ -13,6 +13,7 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { AcceuilAdminComponent } from './dashboard-admin/acceuil-admin/acceuil-admin.component';
 import { RolesComponent } from './dashboard-admin/roles/roles.component';
 import { UtilisateurComponent } from './dashboard-admin/utilisateur/utilisateur.component';
+import { AuthGuardAdmin, AuthGuardUser } from './services/gard';
 
 
 
@@ -20,12 +21,12 @@ import { UtilisateurComponent } from './dashboard-admin/utilisateur/utilisateur.
 
 const routes: Routes = [
   {path : '', redirectTo :  'accueil', pathMatch : 'full',},
-  { path: "accueil", component: AccueilComponent,} ,
+  { path: "accueil", component: AccueilComponent,} , // Pour tous
   { path: "a-propos", component: AProposComponent,},
   { path: "CommentCaMarche", component: CommentCaMarcheComponent,},
   { path: "article", component: ArticlesComponent},
   { path: "ConditionUtilisation", component: ConditionUtilisationComponent,},
-  { path: "confidentialite", component: ConfidentialiteComponent,},
+  { path: "Confidentialite", component: ConfidentialiteComponent,},
   {path: "Contact", component: ContactComponent,},
   { path:"auth" , component: AuthComponent},
   { path:"login", component: LoginComponent,},
@@ -44,12 +45,21 @@ const routes: Routes = [
 {
   path: 'admin',
   loadChildren: () =>
-    import('./dashboard-admin/admin.module').then((m) => m.AdminModule)
+    import('./dashboard-admin/admin.module').then((m) => m.AdminModule),
+  canActivate: [AuthGuardAdmin]
+
+
 },
 
+{
+  path: 'user',
+  loadChildren: () =>
+    import('./dashboard-user/dashboard-user.module').then((m) => m.DashboardUserModule),
+    canActivate: [AuthGuardUser]
+    
+}, 
 
-
-     
+       
 
 
 ];

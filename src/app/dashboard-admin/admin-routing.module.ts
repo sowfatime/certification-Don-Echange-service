@@ -23,7 +23,7 @@ const routes: Routes = [
       { path: "roles", component: RolesComponent},
       { path: "annonces", component: AnnonceComponent},
       { path: "article",component: ArticleComponent},
-      { path: "categorie",component: CategorieComponent},
+      { path: "catgorie",component: CategorieComponent},
       { path: "commentaire",component: CommentaireComponent},
       { path: "localite",component:LocaliteComponent },
       { path: "newsletter",component:NewsletterComponent },

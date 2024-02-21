@@ -4,38 +4,38 @@
     <span class="logo_name">Don&Echange</span>
   </div>
   <ul class="nav-links">
-    <li class="" routerLinkActive="activeLink">
+    <li class="" routerLinkActive="activeLink"routerLinkActive="active">
       <a class="" href="" routerLink="accueil_admin"><i class="fa-solid fa-house"></i>Dashboard</a>
     </li>
     <li class="" routerLinkActive="activeLink">
-      <a href="" routerLink="utilisateur"><i class="fa-solid fa-address-book"></i>Utilisateurs</a>
+      <a href="" routerLink="utilisateur"><i class="fa-solid fa-address-book"routerLinkActive="active"></i>Utilisateurs</a>
     </li>
     <li class="" routerLinkActive="activeLink">
-      <a href="" routerLink="roles"><i class="fa-solid fa-layer-group"></i>Roles</a>
+      <a href="" routerLink="roles"><i class="fa-solid fa-layer-group"routerLinkActive="active"></i>Roles</a>
     </li>
     <li class="" routerLinkActive="activeLink">
       <a href="" routerLink="annonces"><i class="fa-solid fa-triangle-exclamation"></i>annonces</a>
     </li>
     <li class="" routerLinkActive="activeLink">
-      <a href="" routerLink="article"><i class="fa-solid fa-comment"></i>articles</a>
+      <a href="" routerLink="article"><i class="fa-solid fa-comment"routerLinkActive="active"></i>articles</a>
     </li>
     <li class="" routerLinkActive="activeLink">
-      <a href="" routerLink="categorie"><i class="fa-solid fa-newspaper"></i>categories</a>
+      <a href="" routerLink="categorie"><i class="fa-solid fa-newspaper"routerLinkActive="active"></i>categories</a>
     </li>
     <li class="" routerLinkActive="activeLink">
-      <a href="" routerLink="commentaire"><i class="fa-solid fa-file-invoice"></i>commentaires</a>
+      <a href="" routerLink="commentaire"><i class="fa-solid fa-file-invoice"routerLinkActive="active"></i>commentaires</a>
     </li>
     <li class="" routerLinkActive="activeLink">
-      <a href="" routerLink="localite"><i class="fa-solid fa-file-invoice"></i>localites</a>
+      <a href="" routerLink="localite"><i class="fa-solid fa-file-invoice"routerLinkActive="active"></i>localites</a>
     </li>
     <li class="" routerLinkActive="activeLink">
-      <a href="" routerLink="newsletter"><i class="fa-solid fa-file-invoice"></i>newsletter</a>
+      <a href="" routerLink="newsletter"><i class="fa-solid fa-file-invoice"routerLinkActive="active"></i>newsletter</a>
     </li>
-    <li class="log_out">
-      <a href="#">
-        <i class="bx bx-log-out"></i>
-        <span class="links_name">Déconnexion</span>
-      </a>
+    <li class="log_out" (click)="logout()">
+      <i class="bx bx-log-out"></i>
+      <span class="links_name" >Déconnexion</span>
+      <!-- <a href="#" >
+      </a> -->
     </li>
   </ul>
 </div>

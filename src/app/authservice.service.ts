@@ -10,12 +10,18 @@ const api = 'http://127.0.0.1:8000/api';
   providedIn: 'root'
 })
 export class AuthServiceService {
-  Signup: any;
+  inscriptiont(formData: FormData) {
+    throw new Error('Method not implemented.');
+  }
+  inscritUser(formData: FormData) {
+    throw new Error('Method not implemented.');
+  }
+  // Signup: any;
 
   constructor(private http: HttpClient) { }
 
   singin(data: any): Observable<any> {
-    return this.http.post<any>(`${api}/inscription`, data);
+    return this.http.post(`http://127.0.0.1:8000/api/inscription`, data);
   }
 
   login(user: any): Observable<any> {

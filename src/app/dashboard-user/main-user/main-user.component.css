@@ -1,0 +1,24 @@
+.main-content{
+    /* border: 2px solid red; */
+    height: 100vh;
+    margin: 0;
+}
+
+.main-content .navbar{
+    border: 1px solid rgb(10, 10, 10);
+}
+
+.sidebar{
+    height: 99vh;
+}
+
+.contenuMainAdmin{
+    /* border: 1px solid brown; */
+    padding: 0;
+}
+
+.routerLet{
+    overflow: hidden;
+    height: 84vh;
+    overflow-y: scroll;
+}

@@ -32,13 +32,12 @@
     text-align: center;
   }
   
-  .Container_Section_Cards {
+  /* .Container_Section_Cards {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     flex-wrap: wrap;
     gap: 30px;
-  }
+  } */
   
   .Container_Section_Cards .card img {
     width: auto;
@@ -71,7 +70,7 @@
   .titre1,
   .titre2 {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     font-family: 'Times New Roman', Times, serif;
     padding-top: 5px;
   }
@@ -90,7 +89,25 @@
     color: #E94D1A;
     font-weight: bold;
   }
+
+  #carteannonce{
+    /* border: 2px solid red; */
+    /* padding: 50px; */
+    max-width: 500px;
+  }
+  #carteannonce img{
+height: 260px;
+  }
   
+  .categorie{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+   
+  }
+  select{
+    width: 45vh !important;
+    padding:  2px;
+  }
   
  
   @media screen and (max-width:700px) {
@@ -123,12 +140,72 @@
   .white{
     color:white ;
   } */
-  .pull-right {
-    float: right;
-    /* margin-bottom: 25%; */
-  }
+ 
+  
   .card {
     height: 100%;
 }
+.Container_Section_Cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Ajoute un espacement de 30px entre les cartes */
+  flex-wrap: wrap;
+}
 
- 
+ /* Stylisation des détails de l'annonce */
+.detail-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.detail-container h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.detail-container p {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Stylisation des images de l'annonce */
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.gallery-item {
+  width: calc(50% - 10px);
+  margin-bottom: 20px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+/* #selectcatégorie{
+padding-right: 15%;
+} */
+
+/* .titre2,
+.titre4 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.titre2 select,
+.titre5 select {
+    flex: 1;
+    margin-right: 10px; 
+    max-width: calc(33.33% - 10px); 
+} */
+.filtre{
+  text-align: center;
+}
