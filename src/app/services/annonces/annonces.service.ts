@@ -45,4 +45,34 @@ export class AnnoncesService {
         })
       : of(null);
   }
+
+
+
+
+// methode pour supprimer une annonce
+supprimerAnnonce(id: number): Observable<any> {
+  const accessToken = localStorage.getItem('access_token');
+  return accessToken
+    ? this.http.delete<any>(`${api}/annonces/` + id, {
+        headers: new HttpHeaders({'Authorization': `Bearer ${accessToken}` }),
+      })
+    : of(null);
+  }
+
+
+// methode pour modifier une annonce
+updateAnnonce(id: number, annonce: any): Observable<any> {
+  const accessToken = localStorage.getItem('access_token');
+  return accessToken
+    ? this.http.post<any>(`${api}/annonces/${id}`, annonce, {
+      headers: new HttpHeaders({'Authorization': `Bearer ${accessToken}` }),
+      })
+    : of(null);
+  }
+
+
+
+
+
+
 }
