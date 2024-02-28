@@ -1,18 +1,58 @@
-<div class="main-content">
-    <div class="row m-0 p-0 border">
-        <div class="sidebar col-12 d-md-block col-md-2 m-0 p-0 ">
+<div class="row m-0 p-0">
+    <div class="sidebar border d-md-block col-md-2 m-0 p-0" *ngIf="isSidebarVisible">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="contenu p-0" [ngClass]="{'col-md-10': isSidebarVisible, 'col-md-12': !isSidebarVisible}">
+        <div class="navbar">
+            <app-navbar class="w-100 shadow" (toggleSidebarEvent)="toggleSidebar()"></app-navbar>
+        </div>
+        <div class=" m-0 w-100 p-2 contentPage">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- <div class="main-content">
+    <div class="row border m-0">
+        <div class="col-md-2">
             <app-sidebar></app-sidebar>
         </div>
+        <div class="col-md-10">
+            <div class="navabar border">
+                <app-navbar class="w-100"></app-navbar>
+            </div>
+            <div class="contenu">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+       
+    </div>
+
+</div> -->
+
+<!-- <div class="sidebar col-12 d-md-block col-md-2 m-0 p-0 "> -->
+            <!-- <app-sidebar></app-sidebar>
+            <router-outlet></router-outlet> -->
+        <!-- </div> -->
     
-        <div class=" m-0 contenuMainAdmin col-12 col-md-10">
+        <!-- <div class=" m-0 contenuMainAdmin col-12 col-md-10">
             <div class="navbar">
                 <app-navbar class="w-100"></app-navbar> 
             </div>
             <div class="routerLet">
-                <router-outlet></router-outlet>
             </div>
-        </div>
-    
-    </div>
-
-</div>
+        </div> -->
+        

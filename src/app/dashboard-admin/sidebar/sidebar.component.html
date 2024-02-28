@@ -1,98 +1,55 @@
-<div class="sidebar">
-  <div class="logo-details">
-    <i class="bx bxl-c-plus-plus"></i>
-    <span class="logo_name">Don&Echange</span>
-  </div>
-  <ul class="nav-links">
-    <li class="" routerLinkActive="activeLink"routerLinkActive="active">
-      <a class="" href="" routerLink="accueil_admin"><i class="fa-solid fa-house"></i>Dashboard</a>
+
+ <!-- SIDEBAR -->
+
+
+ <section id="sidebar" >
+  <a href="#" class="brand">
+   
+    <img src="../../../assets/logofa.png" alt="" class="logo">
+  </a>
+  
+   
+    
+  <ul class="side-menu top text-center">
+   
+    
+    
+    <li class="" >
+      <a  routerLink="utilisateur" routerLinkActive="active"><i class="fa-solid fa-users mx-2" ></i>Utilisateurs</a>
     </li>
     <li class="" routerLinkActive="activeLink">
-      <a href="" routerLink="utilisateur"><i class="fa-solid fa-address-book"routerLinkActive="active"></i>Utilisateurs</a>
+      <a  routerLink="roles" ><i class="fa-solid fa-scale-balanced mx-2" routerLinkActive="active"></i>Roles</a>
     </li>
     <li class="" routerLinkActive="activeLink">
-      <a href="" routerLink="roles"><i class="fa-solid fa-layer-group"routerLinkActive="active"></i>Roles</a>
+      <a  routerLink="annonces"><i class="fa-solid fa-triangle-exclamation mx-2"></i>annonces</a>
     </li>
     <li class="" routerLinkActive="activeLink">
-      <a href="" routerLink="annonces"><i class="fa-solid fa-triangle-exclamation"></i>annonces</a>
+      <a  routerLink="article"><i class="fa-solid fa-newspaper mx-2" routerLinkActive="active"></i>articles</a>
     </li>
     <li class="" routerLinkActive="activeLink">
-      <a href="" routerLink="article"><i class="fa-solid fa-comment"routerLinkActive="active"></i>articles</a>
+      <a  routerLink="categorie"><i class="fa-solid fa-layer-group mx-2"routerLinkActive="active"></i>categories</a>
     </li>
     <li class="" routerLinkActive="activeLink">
-      <a href="" routerLink="categorie"><i class="fa-solid fa-newspaper"routerLinkActive="active"></i>categories</a>
+      <a  routerLink="commentaire"><i class="fa-solid fa-comment mx-2" routerLinkActive="active"></i>commentaires</a>
     </li>
     <li class="" routerLinkActive="activeLink">
-      <a href="" routerLink="commentaire"><i class="fa-solid fa-file-invoice"routerLinkActive="active"></i>commentaires</a>
+      <a  routerLink="localite"><i class="fa-solid fa-location-dot mx-2" routerLinkActive="active"></i> localites</a>
     </li>
     <li class="" routerLinkActive="activeLink">
-      <a href="" routerLink="localite"><i class="fa-solid fa-file-invoice"routerLinkActive="active"></i>localites</a>
+      <a  routerLink="newsletter"><i class="fa-solid fa-envelopes-bulk mx-2" routerLinkActive="active"></i>newsletter</a>
     </li>
-    <li class="" routerLinkActive="activeLink">
-      <a href="" routerLink="newsletter"><i class="fa-solid fa-file-invoice"routerLinkActive="active"></i>newsletter</a>
-    </li>
-    <li class="log_out" (click)="logout()">
-      <i class="bx bx-log-out"></i>
-      <span class="links_name" >Déconnexion</span>
-      <!-- <a href="#" >
-      </a> -->
+    <li>
+      <a (click)="logout()" class="logout">
+        <i class='bx bxs-log-out-circle' ></i>
+        <span class="text">Deconnexion</span>
+      </a>
     </li>
   </ul>
-</div>
+</section>
+
+<!-- SIDEBAR -->
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="sidebar-content">
-  <ul class="sidebarMenu">
-      <li class="" routerLinkActive="activeLink">
-          <a class="" href="" routerLink="accueil_admin"><i class="fa-solid fa-house"></i>Dashboard</a>
-      </li>
-
-      <li class="" routerLinkActive="activeLink">
-          <a href="" routerLink="utilisateur"><i class="fa-solid fa-layer-group"></i>Utilisateur</a>
-      </li>
-      <li class="" routerLinkActive="activeLink">
-          <a href="" routerLink="roles"><i class="fa-solid fa-address-book"></i>Roles</a>
-      </li>
-      <li class="" routerLinkActive="activeLink">
-          <a href="" routerLink="annonces"><i class="fa-solid fa-triangle-exclamation"></i>annonces</a>
-      </li>
-      <li class="" routerLinkActive="activeLink">
-          <a href="" routerLink="article"><i class="fa-solid fa-comment"></i>articles</a>
-      </li>
-      <li class="" routerLinkActive="activeLink">
-          <a href="" routerLink="categorie"><i class="fa-solid fa-newspaper"></i>categories</a>
-      </li>
-      <li class="" routerLinkActive="activeLink">
-          <a href="" routerLink="commentaire"><i class="fa-solid fa-file-invoice"></i>commentaires</a>
-      </li>
-      <li class="" routerLinkActive="activeLink">
-        <a href="" routerLink="localite"><i class="fa-solid fa-file-invoice"></i>localites</a>
-    </li>
-    <li class="" routerLinkActive="activeLink">
-      <a href="" routerLink="newsletter"><i class="fa-solid fa-file-invoice"></i>newsletter</a>
-    </li>
-  </ul>
-
-
-</div> -->
 

@@ -1,8 +1,61 @@
-<p>Mes articles</p>
-   
-   
-   
-   
-   
-           
+
+    <!-- MAIN -->
+    <main>
        
+    
+       
+        <button  id="button" class="btn btn-custom mb-3 p-2 me-4 " data-bs-toggle="modal"
+        data-bs-target="#exampleModal">Ajouter un article</button>
+      
+        <div class="container">
+  
+            <div class="divtwo " *ngFor="let article of Articleliste ">
+              <div class="cardone shadow" style="width: 18rem;" class="p-4">
+                  <img src="http://localhost:8000/{{article.images?.image}}" class="card-img-top" alt="..." >
+                  <div class="card-body">
+                    <h5 class="card-title" style="color:#55A1CC ;">{{article.libelle}}</h5>
+                    <p class="card-text">{{article.contenu}}</p>
+                  </div>
+                </div>
+          
+          </div>
+        </div>
+      </main>
+
+
+        <!-- Modal  ajout-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Formulaire d'ajout article</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body mx-5">
+                <div class="row">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Titre </label>
+             <input type="text" class="form-control" id="exampleFormControlInput1" name="libelle" [(ngModel)]="libelle"
+                            >
+                        </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Contenu</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="contenu" [(ngModel)]="contenu"
+                              ></textarea>
+                </div>
+                <div class="mb-3">image
+                    <label for="formFile" class="form-label" >
+                        
+                        
+                    </label>
+                    <input class="form-control" type="file" id="formFile" (change)="getFile($event)" name="image">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary mx-2 p-1" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary mx-2 p-1" data-bs-dismiss="modal" (click)=" ajouArticle()" >Ajouter</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end ajout -->

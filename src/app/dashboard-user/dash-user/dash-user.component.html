@@ -1,0 +1,421 @@
+<!-- SIDEBAR -->
+
+
+    <section id="sidebar" [ngClass]="status ? 'hide' : ''">
+        <a href="#" class="brand">
+          <!-- <i class='bx bxs-smile'></i>
+          <span class="text">AdminHub</span> -->
+          <img src="../../../assets/logofa.png" alt="" class="logo" >
+        </a>
+        <ul class="side-menu top text-center">
+          
+          <li  class="active">
+           
+            <a routerLink="/user/accueilUser">
+              <i class='bx bxs-shopping-bag-alt' ></i>
+              <span class="text">Annonces</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="../ArticlesUser">
+              <i class='bx bxs-doughnut-chart' ></i>
+              <span class="text">Articles</span>
+            </a>
+          </li>
+          
+        </ul> 
+        <ul class="side-menu">
+          <li>
+            <a href="#">
+              <i class='bx bxs-cog' ></i>
+              <span class="text">Profil</span>
+            </a>
+          </li>
+          <li>
+            <a (click)="logout()" class="logout">
+              <i class='bx bxs-log-out-circle' ></i>
+              <span class="text">Deconnexion</span>
+            </a>
+          </li>
+          <li>
+            
+          </li>
+        </ul>
+      </section>
+
+  <!-- SIDEBAR -->
+  
+  
+  
+  <!-- CONTENT -->
+  <section id="content">
+    <!-- NAVBAR -->
+    <nav>
+      <i (click)="addToggle()" class='bx bx-menu' ></i>
+      <!-- <a href="#" class="nav-link">Categories</a> -->
+      <form action="#">
+        <div class="form-input">
+          <!-- <input type="search" placeholder="Search...">
+          <button type="button" class="search-btn"><i class='bx bx-search' ></i></button> -->
+        </div>
+      </form>
+      
+      <a href="#" class="profile">
+        <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g">
+      </a>
+    </nav>
+    <!-- NAVBAR -->
+  
+    <!-- MAIN -->
+    <main>
+      <div class="head-title">
+        <div class="left">
+          <h1>Dashboard</h1>
+          <ul class="breadcrumb">
+            <li>
+              <a href="#">Dashboard</a>
+            </li>
+            <li><i class='bx bx-chevron-right' ></i></li>
+            <li>
+              <a class="active" href="#">Acceuil</a>
+            </li>
+          </ul>
+          
+          
+          
+        </div>
+        
+      </div>
+  
+      <ul class="box-info">
+        <li class="teteCard shadow">
+          <i class='bx bxs-calendar-check ' ></i>
+          <span class="text">
+            <h3>6</h3>
+            <p>Articles</p>
+          </span>
+        </li>
+        <li  class="teteCard shadow">
+          <i class='bx bxs-category'></i>
+          <span class="text">
+            <h3>8</h3>
+            <p>Categories</p>
+          </span>
+        </li>
+        <li  class="teteCard shadow">
+          <i class='bx bxs-megaphone'></i>
+          <span class="text">
+            <h3>{{listeAnnonce.length}}</h3>
+            <p>Annonces</p>
+          </span>
+        </li>
+      </ul>  
+      <div class="table-data">
+        <div class="order">
+          <div class="head">
+            <h3>Liste des annonces</h3>
+            <button  id="button" class="btn btn-custom mb-3 p-2 me-4 " data-bs-toggle="modal"
+            data-bs-target="#exampleModal">Faire une annonce</button>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Titre</th>
+                <th>Type</th>
+                <th>Etat</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody  *ngFor="let annonce of listeAnnonce">
+              <tr >
+                <td>
+                  <img src="http://localhost:8000/{{annonce.images.image}}" >
+                </td>
+                <td>{{annonce.annonce.libelle}}</td>
+                <td><span class="status completed">{{annonce.annonce.type}}</span></td>
+                <td>{{annonce.annonce.etat}}</td>
+                <td>
+                  <button class="bbt"><i class="fa-solid fa-trash fa-lg mx-2" style="color: #55A1CC;" (click)="SupprimeAnnonce(annonce.annonce.id)"></i>
+                  </button>
+                  
+                  
+                  <button   class="bbt" data-bs-toggle="modal" data-bs-target="#exampleModalEdit" (click)="chargerInfosTest(annonce.annonce)"><i class="fa-solid fa-pen-to-square fa-lg mx-2" style="color: #55A1CC;" ></i> </button>
+                 <button class="bbt" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="voirDetailAnnonce(annonce.annonce.id)"> <i class="fa-solid fa-eye fa-lg mx-2" style="color: #55A1CC;"></i></button>
+
+                 </td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    
+      </div>
+    </main>
+    <!-- MAIN -->
+  </section>
+  <!-- CONTENT -->
+
+
+<!-- Modal  ajout-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Formulaire d'annonce</h1>
+                    <button type="button" class="btn-close p-1" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body mx-5">
+                    <div class="row">
+
+                        <div class="col-md-5">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Titre </label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" name="libelle"
+                                    [(ngModel)]="libelle">
+                            </div>
+                        </div>
+                        <div class="col-md-5 mx-3">
+                            <div class="mb-3">Etat
+                                <select class="form-select" aria-label="Default select example" name="etat" [(ngModel)]="etat">
+                                    <option selected></option>
+                                    <option value="Comme Neuf">Comme Neuf</option>
+                                    <option value="Bon Etat"> Bon Etat</option>
+                                    <option value="Etat Moyen">Etat Moyen</option>
+                                    <option value="A Bricoler">A Bricoler</option>
+                                </select>
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="mb-3">Type d’annonce
+                                <select class="form-select" aria-label="Default select example" name="type" [(ngModel)]="type">
+                                    <option selected></option>
+                                    <option value="Don">Don</option>
+                                    <option value="Echange">Echange</option>
+                                </select>
+                            </div>
+                        </div>
+                            <div class="col-md-5 mx-4">
+                                <div class="mb-3 w-100">Localité
+                                    <select id="selectLocalité" class="form-select form-select-lg mb-2 w-100"
+                                        aria-label=".form-select-lg example" name="localite" [(ngModel)]="localite">
+                                        <option value="1"></option>
+                                        <option *ngFor="let  localite of  dataLocalites" [value]=" localite.id">{{ localite.nom}}
+                                        </option>
+                                    </select>
+                
+                                </div>
+
+                           
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="mb-3">Catégories
+    
+                                <select id="selectcatégorie" class="form-select form-select-lg mb-2 w-100"
+                                    aria-label=".form-select-lg example" name="categorie" [(ngModel)]="categorie">
+                                    <option value="1"></option>
+                                    <option *ngFor="let  catego of  dataCategorie" [value]="catego.id">{{catego.libelle}} </option>
+                                </select>
+            
+                            </div>
+
+                        </div>
+                        <div class="col-md-5 mx-4">
+                            <div class="mb-3">Date limite
+                                <label for="exampleFormControlInput1" class="form-label"> </label>
+                                <input type="date" class="form-control" id="exampleFormControlInput1" name="date_limite"
+                                    [(ngModel)]="date_limite">
+                            </div>
+                            
+                        </div>
+                    </div>  
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"
+                            [(ngModel)]="description"></textarea>
+                    </div>
+                    <div class="mb-3">image
+                        <label for="formFile" class="form-label" *ngFor="let annonce of tabAnnonce">
+                            <img src="http://localhost:8000/{{annonce.images.image}}">
+                        </label>
+                        <input class="form-control" type="file" id="formFile" (change)="getFile($event)"  name="image">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary mx-2 p-1" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary mx-2 p-1" data-bs-dismiss="modal" (click)=" onSubmit() 
+                ">Ajouter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- end ajout -->
+
+<!-- modal details -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Détails Annonce</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+         <div class="modal-body">
+            <div class="row">
+                <!-- Informations sur l'utilisateur -->
+                <div class="user-info d-flex align-items-center mb-4">
+                    <img src="http://127.0.0.1:8000/{{ username?.photo }}" alt="Photo de l'utilisateur" class="user-photo rounded-circle" style="width: 50px; height: 50px;">
+                    <p class="ml-4"><strong>Annonce publiée par: </strong> {{ username?.nom }}</p>
+      
+                </div>                
+                <!-- Détails de l'annonce -->
+                <div class="col-md-6">
+                    <div class="detail-container">
+                        <h2>{{ detailannonce?.categorie }}</h2>
+                        <p><strong>Description :</strong> {{ detailannonce?.description }}</p>
+                        <p><strong>État :</strong> {{ detailannonce?.etat}}</p>
+                        <p><strong>Type :</strong> {{ detailannonce?.type}}</p>
+                        <p><strong>Catégorie :</strong> {{ detailannonce?.categorie}}</p>
+                        <p><strong>Localité :</strong> {{ detailannonce?.localite_id}}</p>
+                        <p><strong>Date limite :</strong> {{detailannonce?.date_limite}}</p>
+                        <!-- <p><strong>id :</strong> {{detailannonce?.id}}</p> -->
+                    </div>
+                </div>
+                <!-- Carrousel d'images de l'annonce -->
+                <div class="col-md-6">
+                    <div id="carouselExampleControls" class="carousel slide">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active" *ngFor="let image of detailannonceimage; let i = index">
+                            <img src="http://localhost:8000/{{image.image}}" class="d-block w-75 annonce-photo" alt="image">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                </div>
+            </div>
+        </div>
+         
+         <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end details -->
+
+      <!-- Modal  modifie-->
+    <div class="modal fade" id="exampleModalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog  modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Formulaire d'annonce</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body mx-5">
+              <div class="row">
+
+                  <div class="col-md-5">
+                      <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Titre </label>
+                          <input type="text" class="form-control" id="exampleFormControlInput1" name="libelle"
+                              [(ngModel)]="libelle">
+                      </div>
+                  </div>
+                  <div class="col-md-5 mx-3">
+                      <div class="mb-3">Etat
+                          <select class="form-select" aria-label="Default select example" name="etat" [(ngModel)]="etat">
+                              <option selected></option>
+                              <option value="Comme Neuf">Comme Neuf</option>
+                              <option value="Bon Etat"> Bon Etat</option>
+                              <option value="Etat Moyen">Etat Moyen</option>
+                              <option value="A Bricoler">A Bricoler</option>
+                          </select>
+                      </div>
+
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-5">
+                      <div class="mb-3">Type d’annonce
+                          <select class="form-select" aria-label="Default select example" name="type" [(ngModel)]="type">
+                              <option selected></option>
+                              <option value="Don">Don</option>
+                              <option value="Echange">Echange</option>
+                          </select>
+                      </div>
+                  </div>
+                      <div class="col-md-5 mx-4">
+                          <div class="mb-3 w-100">Localité
+                              <select id="selectLocalité" class="form-select form-select-lg mb-2 w-100"
+                                  aria-label=".form-select-lg example" name="localite" [(ngModel)]="localite">
+                                  <option value="1"></option>
+                                  <option *ngFor="let  localite of  dataLocalites" [value]=" localite.id">{{ localite.nom}}
+                                  </option>
+                              </select>
+                          </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-5">
+                      <div class="mb-3">Catégories
+
+                          <select id="selectcatégorie" class="form-select form-select-lg mb-2 w-100"
+                              aria-label=".form-select-lg example" name="categorie" [(ngModel)]="categorie">
+                              <option value="1"></option>
+                              <option *ngFor="let  catego of  dataCategorie" [value]="catego.id">{{catego.libelle}} </option>
+                          </select>
+      
+                      </div>
+
+                  </div>
+                  <div class="col-md-5 mx-4">
+                      <div class="mb-3">Date limite
+                          <label for="exampleFormControlInput1" class="form-label"> </label>
+                          <input type="date" class="form-control" id="exampleFormControlInput1" name="date_limite"
+                              [(ngModel)]="date_limite">
+                      </div>
+                      
+                  </div>
+              </div>  
+              <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"
+                      [(ngModel)]="description"></textarea>
+              </div>
+              <div class="mb-3">image
+                  <label for="formFile" class="form-label" *ngFor="let annonce of tabAnnonce">
+                      <img src="http://localhost:8000/{{annonce.images.image}}">
+                  </label>
+                  <input class="form-control" type="file" id="formFile" (change)="getFile($event)" name="image">
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary"  data-bs-dismiss="modal" (click)=" modifierAnnonce() 
+          ">Valider</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- end modifie -->
+
+
+
+
+
+
+  

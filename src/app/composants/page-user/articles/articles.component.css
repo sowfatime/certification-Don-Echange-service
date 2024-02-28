@@ -1,4 +1,4 @@
-.cardone{
+ .cardone{
     border-radius: 5%;
 
 }
@@ -16,9 +16,20 @@
 
 .container{
     display: flex;
-    justify-content: space-between ;
+    /* justify-content: space-between ; */
     justify-content: space-around;
+    flex-wrap: wrap;
+
 }
-.cardone {
-    margin: 20px; 
+@media screen and (max-width: 768px) {
+    .divone{
+        width: 100%; 
+    }
+    .divtwo{
+        width: 100%; 
+    }
+    .divtree{
+        width: 100%; 
+    }
 }
+

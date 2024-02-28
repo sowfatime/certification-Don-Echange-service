@@ -13,6 +13,7 @@ import Swal from 'sweetalert2';
 
 export class LoginComponent implements OnInit {
   showMessage: string | undefined;
+exactemailCon: any;
  
   ngOnInit(): void {
     // Localstorage pour le token 
@@ -41,6 +42,12 @@ export class LoginComponent implements OnInit {
   // variables pour se connecter
   email = "";
   password: any = "";
+
+     // Variables si les champs sont exacts
+     exactemail : boolean = false;
+     exactpassword : boolean = false;
+      
+   
 
   // Fonction pour afficher un sweetalert
   alertMessage(icon: any, title: any, text: any) {

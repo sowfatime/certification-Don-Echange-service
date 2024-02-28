@@ -15,4 +15,17 @@ export class SidebarComponent {
     localStorage.setItem("isUser", JSON.stringify(false));
     localStorage.setItem("isAdmin", JSON.stringify(false)); 
   }
+
+
+      //Sidebar toggle show hide function
+      status = false;
+      addToggle()
+      {
+        this.status = !this.status;       
+      }    
 }
+
+
+
+
+

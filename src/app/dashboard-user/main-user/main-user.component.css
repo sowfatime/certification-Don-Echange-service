@@ -1,11 +1,11 @@
-.main-content{
-    /* border: 2px solid red; */
+/* .main-content{
     height: 100vh;
     margin: 0;
 }
 
 .main-content .navbar{
     border: 1px solid rgb(10, 10, 10);
+    margin-left: 2%;
 }
 
 .sidebar{
@@ -13,7 +13,6 @@
 }
 
 .contenuMainAdmin{
-    /* border: 1px solid brown; */
     padding: 0;
 }
 
@@ -21,4 +20,5 @@
     overflow: hidden;
     height: 84vh;
     overflow-y: scroll;
-}
+    margin-left: 2%;
+} */

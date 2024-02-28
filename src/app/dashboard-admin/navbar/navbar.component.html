@@ -1,21 +1,75 @@
-
- <section class="home-section">
-  <nav class="nav-bar">
-    <div class="dashboard-icon">
-      <i class="bx bx-home-alt"></i>
-      <span class="dashboard-text">Dashboard</span>
-    </div>
-    <div class="search-box">
-      <input type="text" placeholder="Search..." />
-      <button type="submit"><i class="bx bx-search"></i></button>
-    </div>
-    <div class="profile-details">
-      <div class="profile">
-        <img class="imgAdmin" src="https://img.freepik.com/free-photo/culture-typical-elements-collage_23-2150810917.jpg?w=740&t=st=1707387402~exp=1707388002~hmac=10a18f31c8d6c21c8d79880984da214ceaf7c92e07fa5c7fa422ffed785d6075" alt="" />
-        <span class="admin_name">Admin</span>
+<!-- CONTENT -->
+<section id="content" >
+  <div class="mb-3">
+      <!-- NAVBAR -->
+      <nav>
+        <i (click)="toggleSidebar()" class='bx bx-menu' ></i>
+        <!-- <a href="#" class="nav-link">Categories</a> -->
+        <form action="#">
+          <div class="form-input">
+            <!-- <input type="search" placeholder="Search...">
+            <button type="button" class="search-btn"><i class='bx bx-search' ></i></button> -->
+          </div>
+        </form>
+        
+        <a href="#" class="profile">
+          <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g">
+        </a>
+      </nav>
+      <!-- NAVBAR -->
+  </div>
+  <div  class="mb-3">
+  <!-- MAIN -->
+  <main >
+    <div class="head-title">
+      <div class="left">
+        
+        <ul class="breadcrumb">
+          <li>
+            <a >Dashboard</a>
+          </li>
+          <li><i class='bx bx-chevron-right' ></i></li>
+          <li>
+            <a class="active" >Acceuil</a>
+          <!-- </li> -->
+        </ul>
       </div>
-      <a href="#" class="notification"><i class="bx bx-bell"></i></a>
+      
     </div>
-  </nav>
+  
+    <ul class="box-info">
+      <li class="teteCard shadow">
+        <i class='bx bxs-calendar-check ' ></i>
+        <span class="text">
+          <h3>6</h3>
+          <p>Articles</p>
+        </span>
+      </li>
+      <li  class="teteCard shadow">
+<i class='bx bxs-category'></i>
+        <span class="text">
+          <h3>8</h3>
+          <p>Categories</p>
+        </span>
+      </li>
+      <li  class="teteCard shadow">
+        <i class='bx bxs-megaphone'></i>
+        <span class="text">
+          <h3>{{tabAnnonce.length}}</h3>
+          <p>Annonces</p>
+        </span>
+      </li>
+    </ul>  
+  
+  </main> 
+  </div>
+ 
+
 </section>
+<!-- CONTENT -->
+
+
+
+
+
 

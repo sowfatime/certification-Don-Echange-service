@@ -10,10 +10,17 @@ export class SidebarComponent {
 
 constructor(private route:Router){}
 
+// status = false;
+// addToggle()
+// {
+//   this.status = !this.status;       
+// }
+
+
 
   logout(){
     localStorage.removeItem('access_token');
-    this.route.navigate(['/accueil']);
+    this.route.navigate(['/login']);
     localStorage.setItem("isUser", JSON.stringify(false));
     localStorage.setItem("isAdmin", JSON.stringify(false)); 
   }

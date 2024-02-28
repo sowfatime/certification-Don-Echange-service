@@ -252,7 +252,7 @@ onInscrire() : void{
     console.error('erreur',error);
   }
   )
-    this.verifierChamps('Félicitation!', 'Connexion réussie', 'success');
+    this.verifierChamps('Félicitation!', 'inscription réussie', 'success');
     this.viderChamps();
 
   }

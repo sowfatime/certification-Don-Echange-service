@@ -98,10 +98,11 @@
     border: 0 solid;
     margin-bottom: 6px;
 }
-.form-signin input {
-    margin: 20px 0;
-}
+
 .no-account {
     color: #023047  ;
 }
 
+.demandecompt{
+    display: flex;
+}

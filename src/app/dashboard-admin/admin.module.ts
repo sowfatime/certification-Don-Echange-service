@@ -6,16 +6,17 @@ import { MainAdminComponent } from './main-admin/main-admin.component';
 import { UtilisateurComponent } from './utilisateur/utilisateur.component';
 import { RolesComponent } from './roles/roles.component';
 import { AnnonceComponent } from './annonce/annonce.component';
-import { ArticleComponent } from './article/article.component';
 import { CategorieComponent } from './categorie/categorie.component';
 import { CommentaireComponent } from './commentaire/commentaire.component';
-import { LocaliteComponent } from './localite/localite.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { AcceuilAdminComponent } from './acceuil-admin/acceuil-admin.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { LocaliteComponent } from './localite/localite.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ArticlesComponent } from './article/article.component';
 
 
 
@@ -25,17 +26,17 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     UtilisateurComponent,
     RolesComponent,
     AnnonceComponent,
-    ArticleComponent,
     CategorieComponent,
     CommentaireComponent,
     LocaliteComponent,
     NewsletterComponent,
     AcceuilAdminComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    ArticlesComponent
     // NavbarComponent,
 
   ],
-  imports: [CommonModule, RouterModule, AdminRoutingModule, FormsModule],
+  imports: [CommonModule, RouterModule, AdminRoutingModule, FormsModule,HttpClientModule],
 })
 export class AdminModule { }

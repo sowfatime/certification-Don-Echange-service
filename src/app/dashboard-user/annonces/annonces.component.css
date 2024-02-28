@@ -56,3 +56,26 @@
            .carte-margin {
         margin-bottom: 20px; 
     }
+    #button{
+     margin-left: 5%;
+     background-color: #0a2558;
+     border-bottom: #023047;
+    }
+
+    .annonce-photo{
+      height: 300px !important;
+    } 
+
+    #actionsuprimer {
+      border: 1px solid white;
+
+
+    }
+
+    #actionmodifier{
+      border: 1px solid white;
+
+    }
+   
+
+    

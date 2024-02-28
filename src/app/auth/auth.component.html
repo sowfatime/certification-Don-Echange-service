@@ -12,22 +12,38 @@
                 <form >
                     <div class="div">
                     <h2  class="form-signin-heading text-center" >Inscription</h2>
-                    <input type="text" class="form-control" name="name" placeholder="Nom complet" autofocus="" [(ngModel)]="name" required />
-                    <input type="tel" class="form-control" name="telephone" placeholder="Téléphone"  [(ngModel)]="telephone"  required />
-                    <input type="text" class="form-control" name="email" placeholder="Email" 
+                    <div class="mb-3">
+                        <label  class="labelespacement">Nom complet</label>
+                    <input type="text" class="form-control" name="name" placeholder="Entrez votre nom complet" autofocus="" [(ngModel)]="name" required />
+                    </div>
+                    <div class="mb-3">
+                    <label  class="" for="">Téléphone</label>
+                    <input  class="classlabel"type="tel" class="form-control" name="telephone" placeholder=" Entrez votre numero Téléphone"  [(ngModel)]="telephone"  required />
+                    </div>
+                    <div class="mb-3">
+                    <label  class=""for="">Email</label>
+                    <input type="text" class="form-control" name="email" placeholder="Entrez votre adresse Email" 
                         autofocus="" [(ngModel)]="email"  required />
+                        </div>
+                        <div class="mb-3">
+                        <label for="">photo</label>
                     <input type="file" class="form-control" name="photo" placeholder="Image" autofocus=""
                     (change)="getFile($event)"   required />
-
-                        
-                        <div class="passs-form">
-                            <input type="password" class="form-control" name="password" placeholder="Mot de passe" [(ngModel)]="password"  required />
+                    </div>
+                    <div class="mb-3">
+                    <div class="passs-form">
+                            <label for="">Mot de Passe</label>
+                            <input type="password" class="form-control" name="password" placeholder="Entrez votre mot de passe" [(ngModel)]="password"  required />
                         </div>
-                    <label class="checkbox">
+                        </div>
+                    <!-- <label class="checkbox">
                         <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> J'accepte les termes et conditions
-                    </label>
-                    <button class="btn-login btn btn-lg btn-primary btn-block w-100" type="submit" (click)="onInscrire()">Soumettre</button>
-                    <p>Vous avez pdéjà un compte ? <a ></a><span class="no-account"   style="cursor: pointer;color: rgb(71, 71, 166);"> Se connecter</span></p>
+                    </label> -->
+                    <button class="btn-login btn btn-lg btn-primary btn-block w-100" type="submit" (click)="onInscrire()"  [routerLink]="['/acceuil-user']">Soumettre</button>
+                    <div class="demandeconect">
+                        <p class="demandeconect">Vous avez déjà un compte ?</p>&nbsp;&nbsp;<a  [routerLink]="['/login']" >
+                        <span class="no-account"  style="cursor: pointer;color: blue;">Se connecter</span></a>
+                       </div>
                 </div>
                 </form>
             </div>

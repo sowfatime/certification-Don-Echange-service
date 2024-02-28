@@ -43,7 +43,7 @@
     top: 0;
     z-index: 12;
     width: 100%;
-    height: 80%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,10 +102,12 @@
     font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.form-signin input {
-    margin: 20px 0;
-}
+
 .no-account {
     color: #023047  ;
+}
+
+.demandeconect{
+    display: flex;
 }
 

@@ -15,6 +15,7 @@ import { RolesComponent } from './dashboard-admin/roles/roles.component';
 import { UtilisateurComponent } from './dashboard-admin/utilisateur/utilisateur.component';
 import { AuthGuardAdmin, AuthGuardUser } from './services/gard';
 import { authGuard } from './auth.guard';
+import { DashUserComponent } from './dashboard-user/dash-user/dash-user.component';
 
 
 
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path: "aceuil-admin", component: AcceuilAdminComponent, canActivate:[authGuard]},
   { path: "roles", component:RolesComponent},
   { path: "utilisateur", component:UtilisateurComponent},
+  { path: "dashUser", component: DashUserComponent},
 
 
 

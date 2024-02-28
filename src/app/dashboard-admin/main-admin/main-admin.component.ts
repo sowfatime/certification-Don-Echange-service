@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-admin.component.css']
 })
 export class MainAdminComponent {
+//   status = false;
+// addToggle()
+// {
+//   this.status = !this.status;       
+// }
+
+isSidebarVisible: boolean = true;
+
+  toggleSidebar() {
+    this.isSidebarVisible = !this.isSidebarVisible;
+  }
 
 }

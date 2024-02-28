@@ -13,11 +13,12 @@
                     <div class="widget course-links-widget">
                         <h5 class="widget-title">Liens</h5>
                         <ul class="courses-link-list">
+                            
                             <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Accueil</a></li>
-                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>A-propos</a></li>
-                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Comment ça marche</a></li>
-                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Article</a></li>
-                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Contactez-nous</a></li>
+                            <li><a  [routerLink]="['/a-propos']"><i class="fas fa-long-arrow-alt-right"></i>A-propos</a></li>
+                            <li><a [routerLink]="['/CommentCaMarche']"><i class="fas fa-long-arrow-alt-right"></i>Comment ça marche</a></li>
+                            <li><a [routerLink]="['/article']"><i class="fas fa-long-arrow-alt-right"></i>Article</a></li>
+                            <li><a [routerLink]="['/Contact']" ><i class="fas fa-long-arrow-alt-right"></i>Contactez-nous</a></li>
                         </ul>
                     </div>
                 </div><!-- second column end -->
@@ -25,8 +26,8 @@
                     <div class="widget latest-news-widget">
                         <h5 class="widget-title">Informations légales</h5>
                         <ul class="courses-link-list">
-                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Condition d'utilisation</a></li>
-                            <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Politique de confidentialité</a>
+                            <li><a [routerLink]="['/Confidentialite']" ><i class="fas fa-long-arrow-alt-right"></i>Condition d'utilisation</a></li>
+                            <li><a [routerLink]="['/ConditionUtilisation']" ><i class="fas fa-long-arrow-alt-right"></i>Politique de confidentialité</a>
                             </li>
                         </ul>
                     </div>

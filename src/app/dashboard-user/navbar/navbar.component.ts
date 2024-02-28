@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+username: any;
+
+
+status = false;
+addToggle()
+{
+  this.status = !this.status;       
+}
 
 }
+

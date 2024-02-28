@@ -3,6 +3,7 @@ import { CategorisService } from 'src/app/services/categories/categoris.service'
 import { AnnoncesService } from 'src/app/services/annonces/annonces.service';
 import Swal from 'sweetalert2';
 import { LocalitesService } from 'src/app/services/localites/localites.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -28,14 +29,27 @@ throw new Error('Method not implemented.');
 images: any;
 user: any;
 photo: any;
+loggedIn:any;
+loggedOut:any;
+
   ngOnInit(): void {
+    if (localStorage.getItem('access_token') != null) {
+      this.loggedIn = true;
+      this.loggedOut = false;
+    } else {
+      this.loggedIn = false;
+      this.loggedOut = true;
+    }
+    // 
     this. afficherAnnonces();
     this.afficherCategore();
     this.afficherlocalites();
    }
+
+  
    
    
-  constructor(private annonceService: AnnoncesService, private categoriservice : CategorisService, private locatiteservice : LocalitesService ){}
+  constructor(private annonceService: AnnoncesService, private categoriservice : CategorisService, private locatiteservice : LocalitesService,private route:Router ){}
   // Afficher toutes les annonces
   afficherAnnonces(){
   this.annonceService.getAnnonce().subscribe(
@@ -83,13 +97,6 @@ photo: any;
   detailannoncedate_limite:any;
   username:any
   
-
-
-
-
-
-
-
  
   // Voir detail d'une annonce
   voirDetailAnnonce(id: number){
@@ -112,22 +119,7 @@ photo: any;
         this.detailannoncedate_limite=response.date_limite
         this.username=response.user
         console.log(this.username);
- 
-
-
-
-
-
-
-
-
-
-
-
         console.log(response.images);
-
-        // this.annonceImages = response.images;
-        // console.log("les images", this.annonceImages);
       },
       (error) => {
         console.error('Une erreur s\'est produite : ', error);
@@ -135,27 +127,20 @@ photo: any;
     );
   }
 
+  redirect() {
+    if (this.loggedIn) {
+      this.route.navigate(['user/accueilUser'])
+    } else {
+     Swal.fire({
+       position: 'center',
+       icon: 'success',
+       title: '',
+       text: 'Connectez vous pour avoir accces a cet espace',
+       showConfirmButton: true,
+     });
+
+    }
+  }
+
 }
 
-
-  //   function afficherDetails(titre: string, type: string, etat: string, description: string, imageSrc: string, adresse: string, statut: string) {
-  //     var detailsContent = document.getElementById('detailsContent');
-  //     detailsContent.innerHTML = '<div class="row">' +
-  //         '<div class="col-md-4">' +
-  //         '<img class="img-fluid" src="' + imageSrc + '" alt="' + titre + '">' +
-  //         '</div>' +
-  //         '<div class="col-md-8">' +
-  //         '<h5>' + titre + '</h5>' +
-  //         '<p><strong>Type:</strong> ' + type + '</p>' +
-  //         '<p><strong>État:</strong> ' + etat + '</p>' +
-  //         '<p><strong>Description:</strong> ' + description + '</p>' +
-  //         '<p><strong>Adresse:</strong> ' + adresse + '</p>' +
-  //         '<p><strong>Statut:</strong> ' + statut + '</p>' +
-  //         '</div>' +
-  //         '</div>';
-  //     $('#detailsModal').modal('show');
-  // }
-
-
-  //   ;
- 

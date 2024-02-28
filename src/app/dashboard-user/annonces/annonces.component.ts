@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AnnoncesService } from 'src/app/services/annonces/annonces.service';
 import { CategorisService } from 'src/app/services/categories/categoris.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-annonces',
@@ -8,6 +9,8 @@ import { CategorisService } from 'src/app/services/categories/categoris.service'
   styleUrls: ['./annonces.component.css']
 })
 export class AnnoncesComponent implements OnInit {
+  [x: string]: any;
+ 
 
   userConnected: any;
   listeAnnonce: any[] = [];
@@ -91,6 +94,8 @@ export class AnnoncesComponent implements OnInit {
       console.log("voici la reponse",response);
       // Rest of your code
     });
+    this.ngOnInit();
+    // this.getAnnonce(id); // Actualise la page
   }
 
   getFile(event: any): void {
@@ -98,5 +103,117 @@ export class AnnoncesComponent implements OnInit {
     this.image = event.target.files[0] as File;
     console.warn("l'image inserer",this.image);
   }
+
+// Voir detail d'une annonce
+// voirDetailAnnonce(id: number){
+//   console.log("id de l'element clique",id)
+//   this.annonceService.getDetailAnnonce(id).subscribe(
+//     (response: any) => {
+//       console.log("liste de la reponse",response);//toute la reponse du backend
+//       console.log("liste de la reponse de l'annonce",response.annonce);//juste les informations de l'annonce
+//       console.log("liste de la reponse de l'annonce images",response.images);//juste les images de l'annonce
+//       console.log("infos du propriétaire del'annonce",response.user);//juste les infos du proprietaire
+
+      
+//       this['detailannonce']= response.annonce;
+//       this['detailannonceimage']= response.images,
+//       this['detailannoncedescription']= response.description,
+//       this['detailannonceetat']= response.etat,
+//       this['detailannoncecategorie']= response.categorie;
+//       this['detailannoncetype']= response.Type;
+//       this['detailannoncelocalite']=response.localite;
+//       this['detailannoncedate_limite']=response.date_limite
+//       this['username']=response.user
+//       console.log(this['username']);
+
+
+
+
+
+
+
+
+
+
+
+
+//       console.log(response.images);
+
+//       // this.annonceImages = response.images;
+//       // console.log("les images", this.annonceImages);
+//     },
+//     (error) => {
+//       console.error('Une erreur s\'est produite : ', error);
+//     }
+//   );
+// }
+
+detailannonce:any;
+  detailannonceimage:any;
+  detailannoncedescription:any;
+  detailannonceetat:any;
+  detailannoncetype:any;
+  detailannoncecategorie:any;
+  detailannoncelocalite:any;
+  detailannoncedate_limite:any;
+  username:any
+  
+
+// Voir detail d'une annonce
+voirDetailAnnonce(id: number){
+  console.log("id de l'element clique",id)
+  this.annonceService.getDetailAnnonce(id).subscribe(
+    (response: any) => {
+      console.log("liste de la reponse",response);//toute la reponse du backend
+      console.log("liste de la reponse de l'annonce",response.annonce);//juste les informations de l'annonce
+      console.log("liste de la reponse de l'annonce images",response.images);//juste les images de l'annonce
+      console.log("infos du propriétaire del'annonce",response.user);//juste les infos du proprietaire
+
+      
+      this.detailannonce= response.annonce;
+      this.detailannonceimage= response.images,
+      this.detailannoncedescription= response.description,
+      this.detailannonceetat= response.etat,
+      this.detailannoncecategorie= response.categorie;
+      this.detailannoncetype= response.Type;
+      this.detailannoncelocalite=response.localite;
+      this.detailannoncedate_limite=response.date_limite
+      this.username=response.user
+      console.log(this.username);
+      console.log(response.images);
+    },
+    (error) => {
+      console.error('Une erreur s\'est produite : ', error);
+    }
+  );
+}
+
+// suppression
+SupprimeAnnonce(id: number) {
+  Swal.fire({
+    title: 'Êtes-vous sûr?',
+    text: 'Vous ne pourrez pas revenir en arrière après cette action!',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#017D03',
+    cancelButtonColor: '#FF9C00',
+    confirmButtonText: 'Oui, supprimer!',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      this.annonceService.supprimerAnnonce(id).subscribe((response) => {
+        this.annonceService.verifierChamp(
+          '!!!!',
+          response.status_message,
+          'success'
+        );
+        
+      });
+    }
+    this.ngOnInit();
+    this.getAnnonce(id); // Actualise la page
+  });
+  }
+
+
 
 }

@@ -13,6 +13,12 @@ constructor (private userservice : UserService){}
     this.afficherUser();
   }
 
+  status = false;
+addToggle()
+{
+  this.status = !this.status;       
+}
+
 afficherUser() :  void{
   this.userservice.getUser().subscribe((respons)=>{
     this.tabUser = respons.Utilisateurs;

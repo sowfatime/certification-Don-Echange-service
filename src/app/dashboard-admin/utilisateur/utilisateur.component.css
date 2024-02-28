@@ -27,5 +27,6 @@ h3{
 }
 
 .container{
-  width: 85%;
+  /* margin-left:150px ; */
+  width: auto;
 }
