@@ -1,0 +1,80 @@
+
+       
+       <section class="home-section">
+         
+         <div class="home-content">
+          
+   <!-- contenu -->
+  
+
+
+
+    <div class="roles-section">
+        <div class="roles-header">
+          <button class="add-role-btn" data-bs-toggle="modal" data-bs-target="#exampleModalEdit" >Ajouter un rôle</button>
+        </div>
+        <h2 class="roles-title">Liste des rôles</h2>
+        <div class="roles-list">
+          <button class="role-btn">Utilisateur</button>
+          <button class="role-btn">Administrateur</button>
+        </div>
+      </div>
+
+
+      <div class="modal fade" id="exampleModalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Formulaire d'ajout role</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body mx-5">
+                <div class="row">
+  
+                    <div class="col-md-5">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Nom role</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" name="libelle"
+                                [(ngModel)]="libelle">
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" (click)="ajouterRole()" class="btn btn-primary"   data-bs-dismiss="modal" >Ajouter</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+   
+   
+   
+   
+   <!-- fin contenu -->
+   
+   
+   
+   
+   
+   
+           
+         </div>
+       </section>
+       <script D:\admin-dashboard-in-html-css\Admin Dashboard\script.js></script>
+   
+       <script>
+         let sidebar = document.querySelector(".sidebar");
+         let sidebarBtn = document.querySelector(".sidebarBtn");
+         sidebarBtn.onclick = function () {
+           sidebar.classList.toggle("active");
+           if (sidebar.classList.contains("active")) {
+             sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+           } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+         };
+       </script>
+    
+   

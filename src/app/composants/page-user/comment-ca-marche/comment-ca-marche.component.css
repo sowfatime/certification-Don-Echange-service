@@ -1,0 +1,132 @@
+.premiersoustitreccamarche{
+    padding-left: 30%;
+    padding-top: 3%;
+    color: #FB8500;
+  }
+ 
+  .container {
+    display: flex;
+    align-items: center; 
+  }
+  
+  .gauche {
+    flex: 1;
+    padding-right: 15px;
+  }
+  
+  .droite {
+    flex: 1; 
+  }
+  
+  #proced {
+    width: 100%; 
+    height: auto; 
+  }
+  
+  .bolt {
+    font-weight: bold;
+  }
+  .bolt2 {
+    font-weight: bold;
+    padding-bottom: 5%;
+    padding-left: 15%;
+  }
+  
+  .textprocdure {
+    flex-grow: 1; 
+    font-size: 28px; 
+    font-weight: 200;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .gauche {
+    margin-top: 4%;
+  }
+.divcont3 {
+    display: flex;
+    justify-content: space-between; 
+  }
+  
+  .div {
+    flex: 1; 
+    background-color: #233E4E;
+    text-align: center;
+    border-radius: 2%;
+    padding: 2% 5%; 
+    justify-content: space-between; 
+
+  }
+  
+  .lessoustitres {
+    color: #FB8500;
+  }
+  
+  .lesptitesdescriptions {
+    color: #FFFFFF;
+    padding-bottom: 5%;
+    margin-bottom: 10px;
+    line-height: 1.5; 
+    text-align: justify;
+
+  
+  }
+  
+
+  .divcont3 > .div {
+    max-height: 400px; 
+    overflow: hidden;
+  }
+  .divcont3 {
+    display: flex;
+  }
+  
+  .div {
+    flex: 1;
+    background-color: #023047;
+    text-align: center;
+    border-radius: 2%;
+    padding: 2% 5%;
+    margin-right: 5%; 
+  }
+  
+  .div:last-child {
+    margin-right: 0; 
+  }
+  .carte {
+  width: 350px;
+  background-color: #023047;
+  border: 1px solid #023047;
+  border-radius: 5px;
+  padding: 10px;
+  line-height: 1.5; 
+  margin-left: 5%;
+  /* height: 600px; */
+  height: 400px;
+  /* quant je décommente la hauteur du 400px les sous titres vont apparaitre maitenant faut éssayer de modifier les contenans et adapter pour les faire afficher */
+
+}
+
+.titre {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 16px;
+  color: #555;
+}
+.container2{
+    display: flex;
+}
+#imgundraw{
+    margin-left: 100%;
+  height: auto;
+  margin-bottom: 20%;
+
+}.carte{
+    flex: 1;
+
+}
+.basdepage{
+    padding-left: 5%;
+font-size: 120%;}

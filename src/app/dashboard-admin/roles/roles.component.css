@@ -1,0 +1,53 @@
+
+.roles-section {
+    margin-top: 30px;
+  }
+  
+  .roles-header {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .add-role-btn {
+    padding: 10px 20px;
+    background-color: #0A2558;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px; 
+  }
+  
+  .add-role-btn:hover {
+    background-color: #081D45;
+  }
+  
+  .roles-title {
+    text-align: center;
+    margin-bottom: 10px; 
+    margin-top: 20px; 
+    font-size: 28px; 
+    font-weight: 600;
+  }
+  
+  .roles-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .role-btn {
+    padding: 15px 28px; 
+    margin: 5px;
+    background-color: #0A2558;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .role-btn:hover {
+    background-color: #081D45;
+  }
+  

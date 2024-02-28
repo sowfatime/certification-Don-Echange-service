@@ -1,0 +1,242 @@
+
+      
+        <h5 class="titlelisteannonce">Liste des annonces</h5> <br>
+
+
+                    <!--<div class="row">
+                        <div class="col-12 col-md-3 " *ngFor="let annonce of tabAnnonce">
+                         <div  id="carteannonce"class="card">
+                            <img  src="http://localhost:8000/{{annonce.images.image}}"
+                                 alt="Card image cap" style="height: 100%;">
+                             <div class="card-body">
+                                 <h5 class="">{{annonce.annonce.libelle}}</h5>
+                                 <p class="">{{annonce.annonce.description}}</p>
+                                 <div style="display: flex; justify-content: space-between;">
+                                     <p><span class="red">Type:</span>&nbsp;{{annonce.annonce.type}} </p>
+                                     <p class="red"style="margin-left: 10px;"><span></span>&nbsp;{{annonce.annonce.etat}}</p>
+                                 </div>
+                
+                             </div> 
+                         </div>
+                        </div>
+                     </div>       -->
+                     
+                 
+
+
+       
+<!-- contenu -->
+ <!-- tableau gestion des utilisateur -->
+ <div class="container border" >
+
+    <!-- <h3 class="titlelisteuser">Liste des utilisateurs</h3> -->
+    <div class="container-fluid">
+      <div class="row">
+       <div class="col-12 col-lg-12">
+         <div class="">
+          
+           <div class="table-responsive">
+             <table class="table table-striped custom-table">
+               <thead>
+                 <tr>
+                   <!-- <th scope="col">Photo</th> -->
+                   <th scope="col">Libelle</th>
+                   <th scope="col">Type</th>
+                   <th scope="col">Etat</th>
+                   <th scope="col">Action</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr *ngFor="let annonce of tabAnnonce">
+                    
+                         <!-- <td><img src="http://localhost:8000/{{annonce.images?.image}}" alt=""></td>  -->
+                        <td>{{annonce.annonce.libelle}}</td>
+                        <!-- <td>{{annonce.annonce.description}}</td> -->
+                        <td>{{annonce.annonce.type}}</td>
+                        <td>{{annonce.annonce.etat}}</td>
+                        <td>
+                            <!-- <button class="bbt"><i class="fa-solid fa-trash fa-lg mx-2" style="color: #55A1CC;" (click)="SupprimeAnnonce(annonce.annonce.id)"></i>
+                            </button>
+                             -->
+                            
+                            <!-- <button   class="bbt" data-bs-toggle="modal" data-bs-target="#exampleModalEdit" (click)="chargerInfosTest(annonce.annonce)"><i class="fa-solid fa-pen-to-square fa-lg mx-2" style="color: #55A1CC;" ></i> </button> -->
+                           <button class="bbt" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="voirDetailAnnonce(annonce.annonce.id)"> <i class="fa-solid fa-eye fa-lg mx-2" style="color: #55A1CC;"></i></button>
+          
+                           </td>
+                 </tr>
+             
+               </tbody>
+             </table>
+           </div>
+         </div>
+       </div>
+   
+   
+   
+     </div>
+    </div>
+  </div>
+
+
+  <!-- modal details -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Détails Annonce</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+         <div class="modal-body">
+            <div class="row">
+                <!-- Informations sur l'utilisateur -->
+                <div class="user-info d-flex align-items-center mb-4">
+                    <img src="http://127.0.0.1:8000/{{ username?.photo }}" alt="Photo de l'utilisateur" class="user-photo rounded-circle" style="width: 50px; height: 50px;">
+                    <p class="ml-4"><strong>Annonce publiée par: </strong> {{ username?.nom }}</p>
+      
+                </div>                
+                <!-- Détails de l'annonce -->
+                <div class="col-md-6">
+                    <div class="detail-container">
+                        <h2>{{ detailannonce?.categorie }}</h2>
+                        <p><strong>Description :</strong> {{ detailannonce?.description }}</p>
+                        <p><strong>État :</strong> {{ detailannonce?.etat}}</p>
+                        <p><strong>Type :</strong> {{ detailannonce?.type}}</p>
+                        <p><strong>Catégorie :</strong> {{ detailannonce?.categorie}}</p>
+                        <p><strong>Localité :</strong> {{ detailannonce?.localite_id}}</p>
+                        <p><strong>Date limite :</strong> {{detailannonce?.date_limite}}</p>
+                        <!-- <p><strong>id :</strong> {{detailannonce?.id}}</p> -->
+                    </div>
+                </div>
+                <!-- Carrousel d'images de l'annonce -->
+                <div class="col-md-6">
+                    <div id="carouselExampleControls" class="carousel slide">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active" *ngFor="let image of detailannonceimage; let i = index">
+                            <img src="http://localhost:8000/{{image.image}}" class="d-block w-75 annonce-photo" alt="image">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                </div>
+            </div>
+        </div>
+         
+         <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end details -->
+
+    <!-- Modal  modifie-->
+    <div class="modal fade" id="exampleModalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Formulaire d'annonce</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body mx-5">
+                <div class="row">
+  
+                    <div class="col-md-5">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Titre </label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" name="libelle"
+                                [(ngModel)]="libelle">
+                        </div>
+                    </div>
+                    <div class="col-md-5 mx-3">
+                        <div class="mb-3">Etat
+                            <select class="form-select" aria-label="Default select example" name="etat" [(ngModel)]="etat">
+                                <option selected></option>
+                                <option value="Comme Neuf">Comme Neuf</option>
+                                <option value="Bon Etat"> Bon Etat</option>
+                                <option value="Etat Moyen">Etat Moyen</option>
+                                <option value="A Bricoler">A Bricoler</option>
+                            </select>
+                        </div>
+  
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="mb-3">Type d’annonce
+                            <select class="form-select" aria-label="Default select example" name="type" [(ngModel)]="type">
+                                <option selected></option>
+                                <option value="Don">Don</option>
+                                <option value="Echange">Echange</option>
+                            </select>
+                        </div>
+                    </div>
+                        <div class="col-md-5 mx-4">
+                            <div class="mb-3 w-100">Localité
+                                <select id="selectLocalité" class="form-select form-select-lg mb-2 w-100"
+                                    aria-label=".form-select-lg example" name="localite" [(ngModel)]="localite">
+                                    <option value="1"></option>
+                                    <option *ngFor="let  localite of  dataLocalites" [value]=" localite.id">{{ localite.nom}}
+                                    </option>
+                                </select>
+                            </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="mb-3">Catégories
+  
+                            <select id="selectcatégorie" class="form-select form-select-lg mb-2 w-100"
+                                aria-label=".form-select-lg example" name="categorie" [(ngModel)]="categorie">
+                                <option value="1"></option>
+                                <option *ngFor="let  catego of  dataCategorie" [value]="catego.id">{{catego.libelle}} </option>
+                            </select>
+        
+                        </div>
+  
+                    </div>
+                    <div class="col-md-5 mx-4">
+                        <div class="mb-3">Date limite
+                            <label for="exampleFormControlInput1" class="form-label"> </label>
+                            <input type="date" class="form-control" id="exampleFormControlInput1" name="date_limite"
+                                [(ngModel)]="date_limite">
+                        </div>
+                        
+                    </div>
+                </div>  
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"
+                        [(ngModel)]="description"></textarea>
+                </div>
+                <div class="mb-3">image
+                    <label for="formFile" class="form-label" *ngFor="let annonce of tabAnnonce">
+                        <img src="http://localhost:8000/{{annonce.images.image}}">
+                    </label>
+                    <input class="form-control" type="file" id="formFile" (change)="getFile($event)" name="image">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary"  data-bs-dismiss="modal" (click)=" modifierAnnonce() 
+            ">Valider</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+  <!-- end modifie -->
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ <!-- fin contenu -->

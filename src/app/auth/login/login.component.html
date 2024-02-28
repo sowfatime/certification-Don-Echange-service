@@ -1,0 +1,31 @@
+<div class="login container-fluid">
+    <div class="image-background">
+        <img src="../../../assets/img inscription.jpg" alt="">
+    </div>
+    <div class="login-box">
+    </div>
+    <div class="wrapper">
+        <form class="form-signin">
+            <h2 class="form-signin-heading text-center">Connexion</h2>
+            <label for="">Email</label>
+            <input type="text" class="form-control" name="email" placeholder=" Entrez votre adresse Email"  required="" autofocus="" [(ngModel)]="email" (input)="verifEmailFunction()" />
+            <p class="text-danger" *ngIf="!isEmailVerified">{{verifMessageEmail}}</p>
+            <span *ngIf="isEmailVerified" >
+                <i class="bi bi-check2-all"></i>&nbsp;<span>exact!</span><br>
+              </span>
+            <label for="">Mot de passe</label>
+            <input type="password" class="form-control" name="password" placeholder="Entrez votre mot de passe" required="" [(ngModel)]="password"  />
+            <p class="text-danger">{{verfiMessagePassword}}</p>
+
+            <label class="checkbox">
+                <!-- <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Se souvenir de moi -->
+            </label>
+            <button class="btn-login btn btn-lg btn-primary btn-block w-100" type="submit" (click)="connexion()">Se Connecter</button>
+            <div class="demandecompt">
+            <p class="demandecompte">Vous n'avez pas de compte ? </p>&nbsp;&nbsp;<a  [routerLink]="['/auth']" >
+            <span class="no-account"  style="cursor: pointer;color: blue;">S'inscrire</span></a>
+           </div>
+        </form>
+    </div>  
+</div><br>
+

@@ -1,0 +1,108 @@
+<!-- <div class="sidebar">
+    <div class="logo-details">
+      <i class="bx bxl-c-plus-plus"></i>
+      <span class="logo_name">Don&Echange</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a routerLink="./acceuil-user" routerLinkActive="active">
+          <i class="bx bx-grid-alt"></i>
+          <span class="links_name">Dashboard</span>
+        </a>
+      </li>
+      
+      <li>
+        <a routerLink="./annonces"routerLinkActive="active" >
+          <i class="bx bx-pie-chart-alt-2"></i>
+          <span class="links_name">Annonces</span>
+        </a>
+      </li>
+      <li>
+        <a  routerLink="./dons"routerLinkActive="active" >
+          <i class="bx bx-coin-stack"></i>
+          <span class="links_name">Dons</span>
+        </a>
+      </li>
+      <li>
+        <a  routerLink="./echanges"routerLinkActive="active" >
+          <i class="bx bx-book-alt"></i>
+          <span class="links_name">Echanges</span>
+        </a>
+      </li>
+      <li>
+        <a  routerLink="./articles"routerLinkActive="active" >
+          <i class="bx bx-coin-stack"></i>
+          <span class="links_name">Articles</span>
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="./profil"routerLinkActive="active" >
+          <i class="bx bx-user"></i>
+          <span class="links_name">profil</span>
+        </a>
+      </li>
+    
+      <li class="log_out" (click)="logout()">
+        <i class="bx bx-log-out"></i>
+        <span class="links_name" >Déconnexion</span>
+      
+      </li>
+    </ul>
+  </div>
+  -->
+
+  <section id="sidebar"  [ngClass]="status ? 'hide' : ''">
+    <a href="#" class="brand">
+      <i class='bx bxs-smile'></i>
+      <span class="text">AdminHub</span>
+    </a>
+    <ul class="side-menu top">
+      <li class="active">
+        <a href="#">
+          <i class='bx bxs-dashboard' ></i>
+          <span class="text">Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bxs-shopping-bag-alt' ></i>
+          <span class="text">My Store</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bxs-doughnut-chart' ></i>
+          <span class="text">Analytics</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bxs-message-dots' ></i>
+          <span class="text">Message</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bxs-group' ></i>
+          <span class="text">Team</span>
+        </a>
+      </li>
+    </ul>
+    <ul class="side-menu">
+      <li>
+        <a href="#">
+          <i class='bx bxs-cog' ></i>
+          <span class="text">Settings</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="logout">
+          <i class='bx bxs-log-out-circle' ></i>
+          <span class="text">Logout</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+  <!-- SIDEBAR -->
+  

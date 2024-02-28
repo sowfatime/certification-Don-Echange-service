@@ -1,0 +1,143 @@
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+  }
+  .navbar{
+    background-color: #ffffff;
+    top: 0;
+    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5);
+    height: 80px;
+  }
+  #imagelogo img{
+    height: 60px;
+    /* width: 90%; */
+  }
+  
+  /* .navbar-brand img{
+} */
+    /* width: 23%; */
+  
+  
+  .navbar-nav{
+    display: flex;
+    justify-content: center;
+   width: 75%;
+   padding-left: 13%;
+  }
+  
+  .btn{
+    background-color: #79B5D7;
+    color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    /* margin-left: -4rem; */
+  }
+  
+  .btn:hover{
+    background-color: #55a1cc;
+  }
+  
+  header{
+    top: 0;
+  }
+  
+  ul li a{
+    font-weight: 600;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #000000;
+    font-size: 18px;
+  }
+  
+  @media screen and (max-width: 1195px){
+    .navbar-nav{
+      display: flex;
+        justify-content: center;
+        margin-left: -19rem;
+    }
+  }
+  @media screen and (max-width: 1050px){
+    .navbar-nav{
+      display: flex;
+        justify-content: center;
+        margin-left: -23rem;
+    }
+  }
+  @media screen and (max-width: 666px){
+    .navbar-toggler{
+      margin-left: 34rem;
+      margin-top: -4rem;
+    }
+  }
+  @media screen and (max-width: 633px){
+    .navbar-toggler{
+      margin-left: 32rem;
+      margin-top: -4rem;
+    }
+  }
+  @media screen and (max-width: 587px){
+    .navbar-toggler{
+      margin-left: 29.5rem;
+      margin-top: -4rem;
+    }
+  }
+  @media screen and (max-width: 549px){
+    .navbar-toggler{
+      margin-left: 27rem;
+      margin-top: -4rem;
+    }
+  }
+  @media screen and (max-width: 506px){
+    .navbar-toggler{
+      margin-left: 25rem;
+      margin-top: -4rem;
+    }
+  }
+  @media screen and (max-width: 476px){
+    .navbar-toggler{
+      margin-left: 23.5rem;
+      margin-top: -3rem;
+    }
+  }
+  @media screen and (max-width: 448px){
+    .navbar-toggler{
+      margin-left: 22rem;
+      margin-top: -3rem;
+    }
+  }
+  @media screen and (max-width: 424px){
+    .navbar-toggler{
+      margin-left: 20.5rem;
+      margin-top: -3rem;
+    }
+  }
+  @media screen and (max-width: 400px){
+    .navbar-toggler{
+      margin-left: 19rem;
+      margin-top: -3rem;
+    }
+  }
+  @media screen and (max-width: 635px){
+    .firstCouche{
+      display: none;
+    }
+  }
+  @media screen and (max-width: 992px){
+    .navbar-nav{
+      display: flex;
+        justify-content: center;
+        margin-left: 0.5rem;
+    }
+  
+      .btn {
+        background-color: #023047;
+        color: #ffffff;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        margin-left: 0.4rem;
+      }
+  }
+  
+  ul li a:hover{
+    color: #0873a9;
+  }
+  
+  

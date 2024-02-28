@@ -1,0 +1,28 @@
+.titlelisteannonce{
+    text-align: center;
+    font-weight: bold;
+    font-style: normal;
+   padding-top:  3%;
+    
+    }
+    card-title{
+        padding-left:19%;
+        color: #E94D1A;
+        font-weight: bold;
+         }
+         .red{
+           color: #E94D1A;
+           font-weight: bold;
+         }
+
+ .bottonbleucard{
+            margin-left: 15%;
+             color: #FFFFFF;
+             background-color: #023047;
+         
+           }
+           .titreh5{
+            text-align: center;
+           }
+
+           

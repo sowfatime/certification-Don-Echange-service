@@ -1,0 +1,53 @@
+
+       <section class="home-section">
+
+
+   
+         <div class="home-content">
+
+
+<div class="modal fade modal-lg" id="ajouterlocalite" tabindex="-1" aria-labelledby="modifierMentor" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h1 class="modal-title fs-4 fw-semibold text-center w-100" id="detailMentorLabel">
+                  Ajouter une localite
+
+              </h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+
+
+              <form action="">
+                  <div class="col-12 d-flex justify-content-between">
+                      <div class="mb-3 col-6">
+                          <label for="nom" class="form-label">Nom:</label>
+                          <input type="text" name="nom_localite" class="form-control" id="nom"/>
+                          <option *ngFor="let  localite of  dataLocalites" [value]=" localite.id">{{ localite.nom}} </option>
+
+                      </div>
+                
+                  </div>
+                </form>
+
+
+         </div>
+
+
+
+
+       <script D:\admin-dashboard-in-html-css\Admin Dashboard\script.js></script>
+   
+       <script>
+         let sidebar = document.querySelector(".sidebar");
+         let sidebarBtn = document.querySelector(".sidebarBtn");
+         sidebarBtn.onclick = function () {
+           sidebar.classList.toggle("active");
+           if (sidebar.classList.contains("active")) {
+             sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+           } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+         };
+       </script>
+   

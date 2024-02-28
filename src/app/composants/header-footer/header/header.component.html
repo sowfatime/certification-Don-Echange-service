@@ -1,0 +1,34 @@
+<header>
+<nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid" id="imagelogo" >
+      <a class="navbar-brand" routerLink="/accueil" ><img src="./assets/Logo.png" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto ">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" [routerLink]= "['/accueil']">Accueil</a>
+          </li>&nbsp;
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/a-propos']">A propos</a></li>&nbsp;
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/CommentCaMarche']">Comment ça marche</a>
+          </li>&nbsp;
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/article']">Articles</a>
+          </li>&nbsp;
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/Contact']" >contactez-nous</a>
+          </li>
+        </ul>
+         <div class=" ">
+                <button class="btn " type="submit" routerLink="/auth">S'incrire <i class="fa-solid fa-right-to-bracket"></i></button>
+             <button class="btn ms-1 " type="submit" routerLink="/login">Se connecter <i class="fa-solid fa-user"></i></button>
+
+         </div>
+      </div>
+    </div>
+  </nav>
+  </header>

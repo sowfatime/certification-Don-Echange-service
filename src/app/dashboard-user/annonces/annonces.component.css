@@ -1,0 +1,81 @@
+.titlelisteannonce{
+    text-align: center;
+    font-weight: bold;
+    font-style: normal;
+   padding-top:  3%;
+    
+    }
+    card-title{
+        padding-left:19%;
+        color: #E94D1A;
+        font-weight: bold;
+         }
+         .red{
+           color: #E94D1A;
+           font-weight: bold;
+         }
+
+ .bottonbleucard{
+            margin-left: 15%;
+             color: #FFFFFF;
+             background-color: #023047;
+         
+           }
+           .titreh5{
+            text-align: center;
+           }
+           .Container_Content {
+            margin-top: 60px;
+          }
+          *{
+            list-style: none;
+          }
+          .Container_Content_Section1 p,
+          .Container_Content_Section1 h3 {
+            text-align: center;
+          }
+          
+          .Content_Section1_img {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+            margin-top: 5rem;
+          }
+          
+          .Content_Section1_img img {
+            width: 160px;
+            height: 110px;
+          }
+          
+          .Container_Content_Section2 p,
+          .Container_Content_Section2 h3 {
+            text-align: center;
+          }
+           .carte-margin {
+        margin-bottom: 20px; 
+    }
+    #button{
+     margin-left: 5%;
+     background-color: #0a2558;
+     border-bottom: #023047;
+    }
+
+    .annonce-photo{
+      height: 300px !important;
+    } 
+
+    #actionsuprimer {
+      border: 1px solid white;
+
+
+    }
+
+    #actionmodifier{
+      border: 1px solid white;
+
+    }
+   
+
+    
