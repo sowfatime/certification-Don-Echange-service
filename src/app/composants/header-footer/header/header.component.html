@@ -24,9 +24,10 @@
           </li>
         </ul>
          <div class=" ">
-                <button class="btn " type="submit" routerLink="/auth">S'incrire <i class="fa-solid fa-right-to-bracket"></i></button>
-             <button class="btn ms-1 " type="submit" routerLink="/login">Se connecter <i class="fa-solid fa-user"></i></button>
-
+                <button class="btn mx-2 " *ngIf="loggedOut" type="submit" routerLink="/auth">S'incrire <i class="fa-solid fa-right-to-bracket"></i></button>
+                <button  *ngIf="loggedOut" class="btn btn-custom   py-1 px-3    rounded-pill mx-2" routerLink="/login">Connexion</button>
+                <button *ngIf="loggedIn"  class="btn btn-custom   py-1 px-3   rounded-pill mx-2" (click)="logout()" >Deconnexion</button>
+                <button *ngIf="loggedIn" class=" py-1 px-3   rounded-pill" routerLink="/user"><i class="fa-solid fa-user fa-lg mx-1" style="color: #55a1cc;"></i>Espace perso</button>
          </div>
       </div>
     </div>

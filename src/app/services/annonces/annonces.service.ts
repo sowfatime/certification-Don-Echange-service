@@ -71,6 +71,18 @@ updateAnnonce(id: number, annonce: any): Observable<any> {
   }
 
 
+contacterUser(id:any){
+  const accessToken = localStorage.getItem('access_token');
+  return accessToken
+    ? this.http.post<any>(`${api}/users/whatsapp/${id}`,{
+      headers: new HttpHeaders({'Authorization': `Bearer ${accessToken}` }),
+      })
+    : of(null);
+
+
+}
+
+
 
 
 

@@ -110,7 +110,7 @@ exactemailCon: any;
                     localStorage.setItem("access_token", JSON.stringify(usere.access_token).replace(/['"]+/g, ''));
                     localStorage.setItem('userConnected', JSON.stringify(usere.user));
 
-                    this.router.navigate(['/user']);
+                    this.router.navigate(['/accueil']);
                     // C'est l'utilisateur qui est connecté
                     localStorage.setItem("isUser", JSON.stringify(true));
                     localStorage.setItem("isAdmin", JSON.stringify(false)); 

@@ -44,6 +44,9 @@ loggedOut:any;
     this. afficherAnnonces();
     this.afficherCategore();
     this.afficherlocalites();
+
+    console.log('je suis id',this.username.id);
+    
    }
 
   
@@ -116,8 +119,8 @@ loggedOut:any;
         this.detailannoncecategorie= response.categorie;
         this.detailannoncetype= response.Type;
         this.detailannoncelocalite=response.localite;
-        this.detailannoncedate_limite=response.date_limite
-        this.username=response.user
+        this.detailannoncedate_limite = response.date_limite
+        this.username = response.user
         console.log(this.username);
         console.log(response.images);
       },
@@ -140,6 +143,11 @@ loggedOut:any;
      });
 
     }
+  }
+
+  
+  contacterAnnonceur(){
+
   }
 
 }
